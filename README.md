@@ -1,7 +1,6 @@
-## RUN LOGGING INFRA : ELK STACK (+ docker syslog driver)
+## RUN LOGGING INFRA FOR SECURITY AND PERF : ELK STACK
 
-![ELK_Infra.png](https://github.com/gregbkr/docker-elk-cadvisor-dashboards/raw/master/ELK_Infra.png)
-The result: ![Dashboard.png](https://github.com/gregbkr/docker-elk-cadvisor-dashboards/raw/master/Dashboard.png)
+# WORK IN PROGRESS!!
 
 This setup will run elk
 * elasticsearch database
