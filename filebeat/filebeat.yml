@@ -8,7 +8,7 @@ filebeat:
 output:
   logstash:
     enabled: true
-    hosts: ["185.19.28.216:5001"]
+    hosts: ["xxx.xxx.xx.xx:5001"]
     index: logstash
 
   console:
