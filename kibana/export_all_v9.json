@@ -1,0 +1,696 @@
+[
+  {
+    "_id": "SBEX-Monitoring-Mat",
+    "_type": "dashboard",
+    "_source": {
+      "title": "SBEX Monitoring - Mat",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"col\":1,\"columns\":[\"logspout_fwd_id\",\"container_src\",\"container_msg\"],\"id\":\"Docker_events_view\",\"row\":13,\"size_x\":12,\"size_y\":7,\"sort\":[\"@timestamp\",\"desc\"],\"type\":\"search\"},{\"col\":9,\"id\":\"Docker-Container-Pie\",\"row\":4,\"size_x\":4,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"Docker-Container_src-Top-Area\",\"row\":1,\"size_x\":9,\"size_y\":3,\"type\":\"visualization\"},{\"col\":4,\"id\":\"Tags\",\"row\":7,\"size_x\":3,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"TAGS-vs-time\",\"row\":7,\"size_x\":3,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"columns\":[\"type\",\"@source\",\"tags\",\"message\",\"host\"],\"id\":\"INPUT-logstash-view\",\"row\":10,\"size_x\":6,\"size_y\":3,\"sort\":[\"@timestamp\",\"desc\"],\"type\":\"search\"},{\"col\":10,\"id\":\"ERROR-Pie\",\"row\":1,\"size_x\":3,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"ERROR-vs-time\",\"row\":4,\"size_x\":8,\"size_y\":3,\"type\":\"visualization\"},{\"col\":7,\"id\":\"ERROR-vs-!ERROR\",\"row\":10,\"size_x\":3,\"size_y\":3,\"type\":\"visualization\"},{\"col\":7,\"id\":\"TYPE\",\"row\":7,\"size_x\":3,\"size_y\":3,\"type\":\"visualization\"}]",
+      "version": 1,
+      "timeRestore": true,
+      "timeTo": "now",
+      "timeFrom": "now-1h",
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "PYTHON-monitoring",
+    "_type": "dashboard",
+    "_source": {
+      "title": "PYTHON monitoring",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"col\":7,\"id\":\"[python]-LEVEL-!-equal-info\",\"row\":1,\"size_x\":2,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"[python]-RESPONSE-!-equal-200-vs-time\",\"row\":4,\"size_x\":6,\"size_y\":3,\"type\":\"visualization\"},{\"col\":11,\"id\":\"[python]-USER-EMAIL\",\"row\":1,\"size_x\":2,\"size_y\":3,\"type\":\"visualization\"},{\"col\":11,\"id\":\"[python]-VERB\",\"row\":4,\"size_x\":2,\"size_y\":3,\"type\":\"visualization\"},{\"col\":9,\"id\":\"[python]-LEVEL\",\"row\":1,\"size_x\":2,\"size_y\":3,\"type\":\"visualization\"},{\"col\":9,\"id\":\"[python]-REQUEST\",\"row\":7,\"size_x\":4,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"[python]-LEVEL-!-equal-info-vs-time\",\"row\":1,\"size_x\":6,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"columns\":[\"container_src\",\"level_\",\"user_email\",\"request_method\",\"request_get_full_path\",\"response_status_code\",\"content_len\",\"req_duration\",\"req_unit\",\"sql_count\",\"sql_duration\"],\"id\":\"[python]-View\",\"row\":13,\"size_x\":12,\"size_y\":5,\"sort\":[\"@timestamp\",\"desc\"],\"type\":\"search\"},{\"col\":1,\"id\":\"[python]-REQ-DURATION-MAX-vs-time\",\"row\":7,\"size_x\":6,\"size_y\":3,\"type\":\"visualization\"},{\"col\":7,\"id\":\"[python]-REQ-DURATION-AVR\",\"row\":7,\"size_x\":2,\"size_y\":3,\"type\":\"visualization\"},{\"col\":9,\"id\":\"[python]-RESPONSE\",\"row\":4,\"size_x\":2,\"size_y\":3,\"type\":\"visualization\"},{\"col\":7,\"id\":\"[python]-RESPONSE-!-equal-200\",\"row\":4,\"size_x\":2,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"[python]-SQL-DURATION-MAX-vs-time\",\"row\":10,\"size_x\":6,\"size_y\":3,\"type\":\"visualization\"},{\"col\":7,\"id\":\"[python]-SQL-DURATION-AVR\",\"row\":10,\"size_x\":2,\"size_y\":3,\"type\":\"visualization\"}]",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "WEB-Monitoring",
+    "_type": "dashboard",
+    "_source": {
+      "title": "WEB Monitoring",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"col\":9,\"id\":\"[Web]-CLIENT_IP\",\"row\":4,\"size_x\":2,\"size_y\":3,\"type\":\"visualization\"},{\"col\":11,\"id\":\"[Web]-HTTP-VERSION\",\"row\":1,\"size_x\":2,\"size_y\":3,\"type\":\"visualization\"},{\"col\":7,\"id\":\"[Web]-RESPONSE-!-equal-200\",\"row\":1,\"size_x\":2,\"size_y\":3,\"type\":\"visualization\"},{\"col\":7,\"id\":\"[Web]-USERID\",\"row\":4,\"size_x\":2,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"[web]-RESPONSE-!-equal-200-vs-time\",\"row\":1,\"size_x\":6,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"[web]-UNAUTHORISED-ACCESS-vs-time\",\"row\":4,\"size_x\":6,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"[web]-REQUEST\",\"row\":7,\"size_x\":5,\"size_y\":5,\"type\":\"visualization\"},{\"col\":9,\"id\":\"[Web]-RESPONSE\",\"row\":1,\"size_x\":2,\"size_y\":3,\"type\":\"visualization\"},{\"col\":11,\"id\":\"[Web]-VERB\",\"row\":4,\"size_x\":2,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"columns\":[\"container_src\",\"clientip\",\"auth\",\"verb\",\"request\",\"httpversion\",\"response\",\"bytes\",\"referrer\",\"agent\"],\"id\":\"[web]-View\",\"row\":12,\"size_x\":12,\"size_y\":5,\"sort\":[\"@timestamp\",\"desc\"],\"type\":\"search\"},{\"id\":\"CLIENT-IP-[web]\",\"type\":\"visualization\",\"size_x\":7,\"size_y\":5,\"col\":6,\"row\":7}]",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "ELK-Monitoring",
+    "_type": "dashboard",
+    "_source": {
+      "title": "ELK Monitoring",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"col\":1,\"columns\":[\"logspout_fwd_id\",\"container_src\",\"container_msg\"],\"id\":\"Docker_events_view\",\"row\":16,\"size_x\":12,\"size_y\":5,\"sort\":[\"@timestamp\",\"desc\"],\"type\":\"search\"},{\"col\":7,\"id\":\"Docker-Container-Pie\",\"row\":1,\"size_x\":3,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"Docker-Container_src-Top-Area\",\"row\":4,\"size_x\":6,\"size_y\":3,\"type\":\"visualization\"},{\"col\":4,\"id\":\"Tags\",\"row\":13,\"size_x\":2,\"size_y\":3,\"type\":\"visualization\"},{\"col\":10,\"id\":\"@Source\",\"row\":1,\"size_x\":3,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"TAGS-vs-time\",\"row\":13,\"size_x\":3,\"size_y\":3,\"type\":\"visualization\"},{\"col\":6,\"columns\":[\"type\",\"@source\",\"tags\",\"message\",\"host\"],\"id\":\"INPUT-logstash-view\",\"row\":13,\"size_x\":7,\"size_y\":3,\"sort\":[\"@timestamp\",\"desc\"],\"type\":\"search\"},{\"col\":7,\"id\":\"ERROR-Pie\",\"row\":7,\"size_x\":2,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"ERROR-vs-time\",\"row\":7,\"size_x\":6,\"size_y\":3,\"type\":\"visualization\"},{\"col\":9,\"id\":\"ERROR-vs-!ERROR\",\"row\":7,\"size_x\":3,\"size_y\":3,\"type\":\"visualization\"},{\"col\":7,\"id\":\"TYPE\",\"row\":4,\"size_x\":3,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"[infra]-CORE-CONTAINER_SOURCE-vs-Time\",\"row\":1,\"size_x\":6,\"size_y\":3,\"type\":\"visualization\"},{\"id\":\"ERROR-vs-time-[elk]\",\"type\":\"visualization\",\"size_x\":6,\"size_y\":3,\"col\":1,\"row\":10}]",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "NotLogSince15min",
+    "_type": "search",
+    "_source": {
+      "title": "NotLogSince15min",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"[logstash-]YYYY.MM.DD\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"fragment_size\":2147483647},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "[python]-View",
+    "_type": "search",
+    "_source": {
+      "title": "View [python]",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "container_src",
+        "level_",
+        "user_email",
+        "request_method",
+        "request_get_full_path",
+        "response_status_code",
+        "content_len",
+        "req_duration",
+        "req_unit",
+        "sql_count",
+        "sql_duration"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"analyze_wildcard\": true,\n      \"query\": \"_type:*python\"\n    }\n  },\n  \"highlight\": {\n    \"pre_tags\": [\n      \"@kibana-highlighted-field@\"\n    ],\n    \"post_tags\": [\n      \"@/kibana-highlighted-field@\"\n    ],\n    \"fields\": {\n      \"*\": {}\n    },\n    \"fragment_size\": 2147483647\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "[web]-View",
+    "_type": "search",
+    "_source": {
+      "title": "View [web]",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "container_src",
+        "clientip",
+        "auth",
+        "verb",
+        "request",
+        "httpversion",
+        "response",
+        "bytes",
+        "referrer",
+        "agent"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"highlight\": {\n    \"pre_tags\": [\n      \"@kibana-highlighted-field@\"\n    ],\n    \"post_tags\": [\n      \"@/kibana-highlighted-field@\"\n    ],\n    \"fields\": {\n      \"*\": {}\n    },\n    \"fragment_size\": 2147483647\n  },\n  \"filter\": [],\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"_type:*web\",\n      \"analyze_wildcard\": true\n    }\n  }\n}"
+      }
+    }
+  },
+  {
+    "_id": "INPUT-logstash-view",
+    "_type": "search",
+    "_source": {
+      "title": "VIEW INPUT for TAGS  [elk]",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "type",
+        "@source",
+        "tags",
+        "message",
+        "host"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"tags:*parsefailure\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"highlight\": {\n    \"pre_tags\": [\n      \"@kibana-highlighted-field@\"\n    ],\n    \"post_tags\": [\n      \"@/kibana-highlighted-field@\"\n    ],\n    \"fields\": {\n      \"*\": {}\n    },\n    \"fragment_size\": 2147483647\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "Docker_events_view",
+    "_type": "search",
+    "_source": {
+      "title": "View [infra]",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "logspout_fwd_id",
+        "container_src",
+        "container_msg"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"highlight\": {\n    \"pre_tags\": [\n      \"@kibana-highlighted-field@\"\n    ],\n    \"post_tags\": [\n      \"@/kibana-highlighted-field@\"\n    ],\n    \"fields\": {\n      \"*\": {}\n    },\n    \"fragment_size\": 2147483647\n  },\n  \"filter\": [],\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"*\",\n      \"analyze_wildcard\": true\n    }\n  }\n}"
+      }
+    }
+  },
+  {
+    "_id": "ERROR-vs-!ERROR",
+    "_type": "visualization",
+    "_source": {
+      "title": "ERROR vs !ERROR [elk]",
+      "visState": "{\n  \"type\": \"pie\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"isDonut\": false\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"filters\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"filters\": [\n          {\n            \"input\": {\n              \"query\": {\n                \"query_string\": {\n                  \"query\": \"NOT (Error Warning Critical Fatal)\",\n                  \"analyze_wildcard\": true\n                }\n              }\n            }\n          },\n          {\n            \"input\": {\n              \"query\": {\n                \"query_string\": {\n                  \"query\": \"Error Warning Critical Fatal\",\n                  \"analyze_wildcard\": true\n                }\n              }\n            }\n          }\n        ]\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"*\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "ERROR-Pie",
+    "_type": "visualization",
+    "_source": {
+      "title": "ERROR [elk]",
+      "visState": "{\n  \"type\": \"pie\",\n  \"params\": {\n    \"addLegend\": true,\n    \"addTooltip\": true,\n    \"isDonut\": false,\n    \"shareYAxis\": true\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"filters\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"filters\": [\n          {\n            \"input\": {\n              \"query\": {\n                \"query_string\": {\n                  \"query\": \"Fatal\",\n                  \"analyze_wildcard\": true\n                }\n              }\n            }\n          },\n          {\n            \"input\": {\n              \"query\": {\n                \"query_string\": {\n                  \"query\": \"Critical\",\n                  \"analyze_wildcard\": true\n                }\n              }\n            }\n          },\n          {\n            \"input\": {\n              \"query\": {\n                \"query_string\": {\n                  \"query\": \"Error\",\n                  \"analyze_wildcard\": true\n                }\n              }\n            }\n          },\n          {\n            \"input\": {\n              \"query\": {\n                \"query_string\": {\n                  \"query\": \"Warning\",\n                  \"analyze_wildcard\": true\n                }\n              }\n            }\n          }\n        ]\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"analyze_wildcard\": true,\n      \"query\": \"*\"\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "@Source",
+    "_type": "visualization",
+    "_source": {
+      "title": "@SOURCE [elk]",
+      "visState": "{\n  \"type\": \"table\",\n  \"params\": {\n    \"perPage\": 10,\n    \"showPartialRows\": false,\n    \"showMeticsAtAllLevels\": false\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"terms\",\n      \"schema\": \"bucket\",\n      \"params\": {\n        \"field\": \"@source\",\n        \"size\": 10,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"*\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "ERROR-vs-time",
+    "_type": "visualization",
+    "_source": {
+      "title": "ERROR vs time [elk]",
+      "visState": "{\n  \"type\": \"area\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"smoothLines\": false,\n    \"scale\": \"linear\",\n    \"interpolate\": \"linear\",\n    \"mode\": \"stacked\",\n    \"times\": [],\n    \"addTimeMarker\": false,\n    \"defaultYExtents\": false,\n    \"setYExtents\": false,\n    \"yAxis\": {}\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"date_histogram\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"@timestamp\",\n        \"interval\": \"auto\",\n        \"customInterval\": \"2h\",\n        \"min_doc_count\": 1,\n        \"extended_bounds\": {}\n      }\n    },\n    {\n      \"id\": \"3\",\n      \"type\": \"filters\",\n      \"schema\": \"group\",\n      \"params\": {\n        \"filters\": [\n          {\n            \"input\": {\n              \"query\": {\n                \"query_string\": {\n                  \"query\": \"Warning\",\n                  \"analyze_wildcard\": true\n                }\n              }\n            }\n          },\n          {\n            \"input\": {\n              \"query\": {\n                \"query_string\": {\n                  \"query\": \"Error\",\n                  \"analyze_wildcard\": true\n                }\n              }\n            }\n          },\n          {\n            \"input\": {\n              \"query\": {\n                \"query_string\": {\n                  \"query\": \"Critical\",\n                  \"analyze_wildcard\": true\n                }\n              }\n            }\n          },\n          {\n            \"input\": {\n              \"query\": {\n                \"query_string\": {\n                  \"query\": \"Fatal\",\n                  \"analyze_wildcard\": true\n                }\n              }\n            }\n          }\n        ]\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"filter\": [],\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"*\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"highlight\": {\n    \"pre_tags\": [\n      \"@kibana-highlighted-field@\"\n    ],\n    \"post_tags\": [\n      \"@/kibana-highlighted-field@\"\n    ],\n    \"fields\": {\n      \"*\": {}\n    },\n    \"fragment_size\": 2147483647\n  }\n}"
+      }
+    }
+  },
+  {
+    "_id": "TAGS-vs-time",
+    "_type": "visualization",
+    "_source": {
+      "title": "TAGS vs time [elk]",
+      "visState": "{\n  \"type\": \"area\",\n  \"params\": {\n    \"addLegend\": true,\n    \"addTimeMarker\": false,\n    \"addTooltip\": true,\n    \"defaultYExtents\": false,\n    \"interpolate\": \"linear\",\n    \"mode\": \"stacked\",\n    \"scale\": \"linear\",\n    \"setYExtents\": false,\n    \"shareYAxis\": true,\n    \"smoothLines\": false,\n    \"times\": [],\n    \"yAxis\": {}\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"date_histogram\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"@timestamp\",\n        \"interval\": \"auto\",\n        \"customInterval\": \"2h\",\n        \"min_doc_count\": 1,\n        \"extended_bounds\": {}\n      }\n    },\n    {\n      \"id\": \"3\",\n      \"type\": \"terms\",\n      \"schema\": \"group\",\n      \"params\": {\n        \"field\": \"tags\",\n        \"size\": 5,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"analyze_wildcard\": true,\n      \"query\": \"*\"\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "[python]-LEVEL-!-equal-info",
+    "_type": "visualization",
+    "_source": {
+      "title": "LEVEL != info [python]",
+      "visState": "{\n  \"type\": \"pie\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"isDonut\": false\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"terms\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"level_\",\n        \"size\": 10,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"NOT level_:info\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "[python]-LEVEL",
+    "_type": "visualization",
+    "_source": {
+      "title": "LEVEL [python]",
+      "visState": "{\n  \"type\": \"pie\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"isDonut\": false\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"terms\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"level_\",\n        \"size\": 10,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"*\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "TYPE",
+    "_type": "visualization",
+    "_source": {
+      "title": "TYPE [elk]",
+      "visState": "{\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"params\": {},\n      \"schema\": \"metric\",\n      \"type\": \"count\"\n    },\n    {\n      \"id\": \"2\",\n      \"params\": {\n        \"field\": \"type.raw\",\n        \"order\": \"desc\",\n        \"orderBy\": \"1\",\n        \"size\": 5\n      },\n      \"schema\": \"segment\",\n      \"type\": \"terms\"\n    }\n  ],\n  \"listeners\": {},\n  \"params\": {\n    \"addLegend\": true,\n    \"addTooltip\": true,\n    \"isDonut\": false,\n    \"shareYAxis\": true\n  },\n  \"type\": \"pie\"\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"analyze_wildcard\": true,\n      \"query\": \"*\"\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "Tags",
+    "_type": "visualization",
+    "_source": {
+      "title": "TAGS [elk]",
+      "visState": "{\n  \"type\": \"table\",\n  \"params\": {\n    \"perPage\": 10,\n    \"showPartialRows\": false,\n    \"showMeticsAtAllLevels\": false\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"terms\",\n      \"schema\": \"bucket\",\n      \"params\": {\n        \"field\": \"tags\",\n        \"size\": 5,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"*\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "[python]-RESPONSE-!-equal-200-vs-time",
+    "_type": "visualization",
+    "_source": {
+      "title": "RESPONSE !=200 vs time [python]",
+      "visState": "{\n  \"type\": \"histogram\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"scale\": \"linear\",\n    \"mode\": \"stacked\",\n    \"times\": [],\n    \"addTimeMarker\": false,\n    \"defaultYExtents\": false,\n    \"setYExtents\": false,\n    \"yAxis\": {}\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"date_histogram\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"@timestamp\",\n        \"interval\": \"auto\",\n        \"customInterval\": \"2h\",\n        \"min_doc_count\": 1,\n        \"extended_bounds\": {}\n      }\n    },\n    {\n      \"id\": \"3\",\n      \"type\": \"terms\",\n      \"schema\": \"group\",\n      \"params\": {\n        \"field\": \"response_status_code\",\n        \"size\": 10,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"NOT response_status_code:\\\"200\\\"\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "[python]-LEVEL-!-equal-info-vs-time",
+    "_type": "visualization",
+    "_source": {
+      "title": "LEVEL != info vs time [python]",
+      "visState": "{\n  \"type\": \"histogram\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"scale\": \"linear\",\n    \"mode\": \"stacked\",\n    \"times\": [],\n    \"addTimeMarker\": false,\n    \"defaultYExtents\": false,\n    \"setYExtents\": false,\n    \"yAxis\": {}\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"date_histogram\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"@timestamp\",\n        \"interval\": \"auto\",\n        \"customInterval\": \"2h\",\n        \"min_doc_count\": 1,\n        \"extended_bounds\": {}\n      }\n    },\n    {\n      \"id\": \"3\",\n      \"type\": \"terms\",\n      \"schema\": \"group\",\n      \"params\": {\n        \"field\": \"level_\",\n        \"size\": 10,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"NOT level_:info\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "[python]-LEVEL-vs-time",
+    "_type": "visualization",
+    "_source": {
+      "title": "LEVEL vs time [python]",
+      "visState": "{\n  \"type\": \"histogram\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"scale\": \"linear\",\n    \"mode\": \"stacked\",\n    \"times\": [],\n    \"addTimeMarker\": false,\n    \"defaultYExtents\": false,\n    \"setYExtents\": false,\n    \"yAxis\": {}\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"date_histogram\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"@timestamp\",\n        \"interval\": \"auto\",\n        \"customInterval\": \"2h\",\n        \"min_doc_count\": 1,\n        \"extended_bounds\": {}\n      }\n    },\n    {\n      \"id\": \"3\",\n      \"type\": \"terms\",\n      \"schema\": \"group\",\n      \"params\": {\n        \"field\": \"level_\",\n        \"size\": 10,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"*\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "[python]-REQ-DURATION-MAX-vs-time",
+    "_type": "visualization",
+    "_source": {
+      "title": "REQUEST duration max (in sec) vs time [python]",
+      "visState": "{\n  \"type\": \"histogram\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"scale\": \"linear\",\n    \"mode\": \"stacked\",\n    \"times\": [],\n    \"addTimeMarker\": false,\n    \"defaultYExtents\": false,\n    \"setYExtents\": false,\n    \"yAxis\": {}\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"max\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"field\": \"req_duration\"\n      }\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"date_histogram\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"@timestamp\",\n        \"interval\": \"s\",\n        \"customInterval\": \"2h\",\n        \"min_doc_count\": 1,\n        \"extended_bounds\": {}\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"*\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "[python]-RESPONSE-!-equal-200",
+    "_type": "visualization",
+    "_source": {
+      "title": "RESPONSE != 200 [python]",
+      "visState": "{\n  \"type\": \"pie\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"isDonut\": false\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"terms\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"response_status_code\",\n        \"size\": 6,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"NOT response_status_code:\\\"200\\\"\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "[python]-REQUEST",
+    "_type": "visualization",
+    "_source": {
+      "title": "REQUEST [python]",
+      "visState": "{\n  \"type\": \"table\",\n  \"params\": {\n    \"perPage\": 10,\n    \"showPartialRows\": false,\n    \"showMeticsAtAllLevels\": false\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"terms\",\n      \"schema\": \"bucket\",\n      \"params\": {\n        \"field\": \"request_get_full_path.raw\",\n        \"size\": 7,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"*\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "[python]-RESPONSE",
+    "_type": "visualization",
+    "_source": {
+      "title": "RESPONSE [python]",
+      "visState": "{\n  \"type\": \"pie\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"isDonut\": false\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"terms\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"response_status_code\",\n        \"size\": 6,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"*\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "[web]-USER_ID-ACCESS-vs-time",
+    "_type": "visualization",
+    "_source": {
+      "title": "ACCESS vs time [web]",
+      "visState": "{\n  \"type\": \"histogram\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"scale\": \"linear\",\n    \"mode\": \"stacked\",\n    \"times\": [],\n    \"addTimeMarker\": false,\n    \"defaultYExtents\": false,\n    \"setYExtents\": false,\n    \"yAxis\": {}\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"date_histogram\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"@timestamp\",\n        \"interval\": \"auto\",\n        \"customInterval\": \"2h\",\n        \"min_doc_count\": 1,\n        \"extended_bounds\": {}\n      }\n    },\n    {\n      \"id\": \"3\",\n      \"type\": \"terms\",\n      \"schema\": \"group\",\n      \"params\": {\n        \"field\": \"auth\",\n        \"size\": 10,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"*\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "[web]-ACCESS-vs-time",
+    "_type": "visualization",
+    "_source": {
+      "title": "ACCESS vs time [web]",
+      "visState": "{\n  \"type\": \"histogram\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"scale\": \"linear\",\n    \"mode\": \"stacked\",\n    \"times\": [],\n    \"addTimeMarker\": false,\n    \"defaultYExtents\": false,\n    \"setYExtents\": false,\n    \"yAxis\": {}\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"date_histogram\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"@timestamp\",\n        \"interval\": \"auto\",\n        \"customInterval\": \"2h\",\n        \"min_doc_count\": 1,\n        \"extended_bounds\": {}\n      }\n    },\n    {\n      \"id\": \"3\",\n      \"type\": \"terms\",\n      \"schema\": \"group\",\n      \"params\": {\n        \"field\": \"auth.raw\",\n        \"size\": 10,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"*\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "[python]-SQL-DURATION-MAX-vs-time",
+    "_type": "visualization",
+    "_source": {
+      "title": "SQL duration max (in sec) vs time [python]",
+      "visState": "{\n  \"type\": \"histogram\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"scale\": \"linear\",\n    \"mode\": \"stacked\",\n    \"times\": [],\n    \"addTimeMarker\": false,\n    \"defaultYExtents\": false,\n    \"setYExtents\": false,\n    \"yAxis\": {}\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"max\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"field\": \"sql_duration\"\n      }\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"date_histogram\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"@timestamp\",\n        \"interval\": \"auto\",\n        \"customInterval\": \"2h\",\n        \"min_doc_count\": 1,\n        \"extended_bounds\": {}\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"*\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "[Web]-CLIENT_IP",
+    "_type": "visualization",
+    "_source": {
+      "title": "CLIENT IP [Web]",
+      "visState": "{\n  \"type\": \"pie\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"isDonut\": false\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"terms\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"clientip\",\n        \"size\": 6,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"NOT response:\\\"200\\\"\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "[python]-USER-EMAIL",
+    "_type": "visualization",
+    "_source": {
+      "title": "USER EMAIL [python]",
+      "visState": "{\n  \"type\": \"pie\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"isDonut\": false\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"terms\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"user_email.raw\",\n        \"size\": 6,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"*\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "[Web]-HTTP-VERSION",
+    "_type": "visualization",
+    "_source": {
+      "title": "HTTP VERSION [Web]",
+      "visState": "{\n  \"type\": \"pie\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"isDonut\": false\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"terms\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"httpversion\",\n        \"size\": 10,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"*\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "[python]-VERB",
+    "_type": "visualization",
+    "_source": {
+      "title": "VERB [python]",
+      "visState": "{\n  \"type\": \"pie\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"isDonut\": false\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"terms\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"request_method.raw\",\n        \"size\": 10,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"*\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "[web]-REQUEST",
+    "_type": "visualization",
+    "_source": {
+      "title": "REQUEST [web]",
+      "visState": "{\n  \"type\": \"table\",\n  \"params\": {\n    \"perPage\": 10,\n    \"showPartialRows\": false,\n    \"showMeticsAtAllLevels\": false\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"terms\",\n      \"schema\": \"bucket\",\n      \"params\": {\n        \"field\": \"request.raw\",\n        \"size\": 7,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"*\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "[python]-SQL-DURATION-AVR",
+    "_type": "visualization",
+    "_source": {
+      "title": "SQL duration avg (in sec) [python]",
+      "visState": "{\n  \"type\": \"metric\",\n  \"params\": {\n    \"fontSize\": 60\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"avg\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"field\": \"sql_duration\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"sql_count:>0\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "[web]-RESPONSE-!-equal-200-vs-time-(area)",
+    "_type": "visualization",
+    "_source": {
+      "title": "RESPONSE !=200 vs time (area) [web]",
+      "visState": "{\n  \"type\": \"area\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"smoothLines\": false,\n    \"scale\": \"linear\",\n    \"interpolate\": \"linear\",\n    \"mode\": \"stacked\",\n    \"times\": [],\n    \"addTimeMarker\": false,\n    \"defaultYExtents\": false,\n    \"setYExtents\": false,\n    \"yAxis\": {}\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"date_histogram\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"@timestamp\",\n        \"interval\": \"auto\",\n        \"customInterval\": \"2h\",\n        \"min_doc_count\": 1,\n        \"extended_bounds\": {}\n      }\n    },\n    {\n      \"id\": \"3\",\n      \"type\": \"terms\",\n      \"schema\": \"group\",\n      \"params\": {\n        \"field\": \"response\",\n        \"size\": 10,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"NOT response:\\\"200\\\"\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "Docker-Container_src-Top-Area",
+    "_type": "visualization",
+    "_source": {
+      "title": "CONTAINER SOURCE vs time [infra]",
+      "visState": "{\n  \"type\": \"area\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"smoothLines\": false,\n    \"scale\": \"linear\",\n    \"interpolate\": \"linear\",\n    \"mode\": \"stacked\",\n    \"times\": [],\n    \"addTimeMarker\": false,\n    \"defaultYExtents\": false,\n    \"setYExtents\": false,\n    \"yAxis\": {}\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"date_histogram\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"@timestamp\",\n        \"interval\": \"auto\",\n        \"customInterval\": \"2h\",\n        \"min_doc_count\": 1,\n        \"extended_bounds\": {}\n      }\n    },\n    {\n      \"id\": \"3\",\n      \"type\": \"significant_terms\",\n      \"schema\": \"group\",\n      \"params\": {\n        \"field\": \"container_src\",\n        \"size\": 5\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"*\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "[web]-RESPONSE-!-equal-200-vs-time",
+    "_type": "visualization",
+    "_source": {
+      "title": "RESPONSE !=200 vs time [web]",
+      "visState": "{\n  \"type\": \"histogram\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"scale\": \"linear\",\n    \"mode\": \"stacked\",\n    \"times\": [],\n    \"addTimeMarker\": false,\n    \"defaultYExtents\": false,\n    \"setYExtents\": false,\n    \"yAxis\": {}\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"date_histogram\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"@timestamp\",\n        \"interval\": \"auto\",\n        \"customInterval\": \"2h\",\n        \"min_doc_count\": 1,\n        \"extended_bounds\": {}\n      }\n    },\n    {\n      \"id\": \"3\",\n      \"type\": \"terms\",\n      \"schema\": \"group\",\n      \"params\": {\n        \"field\": \"response\",\n        \"size\": 10,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"NOT response:\\\"200\\\"\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "[web]-UNAUTHORISED-ACCESS-vs-time",
+    "_type": "visualization",
+    "_source": {
+      "title": "UNAUTHORISED ACCESS vs time [web]",
+      "visState": "{\n  \"type\": \"histogram\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"scale\": \"linear\",\n    \"mode\": \"stacked\",\n    \"times\": [],\n    \"addTimeMarker\": false,\n    \"defaultYExtents\": false,\n    \"setYExtents\": false,\n    \"yAxis\": {}\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"date_histogram\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"@timestamp\",\n        \"interval\": \"auto\",\n        \"customInterval\": \"2h\",\n        \"min_doc_count\": 1,\n        \"extended_bounds\": {}\n      }\n    },\n    {\n      \"id\": \"3\",\n      \"type\": \"terms\",\n      \"schema\": \"group\",\n      \"params\": {\n        \"field\": \"auth\",\n        \"size\": 10,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"response:401\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "[Web]-RESPONSE-!-equal-200",
+    "_type": "visualization",
+    "_source": {
+      "title": "RESPONSE != 200 [Web]",
+      "visState": "{\n  \"type\": \"pie\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"isDonut\": false\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"terms\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"response\",\n        \"size\": 6,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"NOT response:\\\"200\\\"\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "Docker-Container-Pie",
+    "_type": "visualization",
+    "_source": {
+      "title": "CONTAINER SOURCE [infra]",
+      "visState": "{\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"params\": {},\n      \"schema\": \"metric\",\n      \"type\": \"count\"\n    },\n    {\n      \"id\": \"2\",\n      \"params\": {\n        \"field\": \"container_src\",\n        \"order\": \"desc\",\n        \"orderBy\": \"1\",\n        \"size\": 5\n      },\n      \"schema\": \"segment\",\n      \"type\": \"terms\"\n    }\n  ],\n  \"listeners\": {},\n  \"params\": {\n    \"addLegend\": true,\n    \"addTooltip\": true,\n    \"isDonut\": false,\n    \"shareYAxis\": true\n  },\n  \"type\": \"pie\"\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"analyze_wildcard\": true,\n      \"query\": \"*\"\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "[Web]-RESPONSE",
+    "_type": "visualization",
+    "_source": {
+      "title": "RESPONSE [Web]",
+      "visState": "{\n  \"type\": \"pie\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"isDonut\": false\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"terms\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"response\",\n        \"size\": 6,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"*\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "[Web]-USERID",
+    "_type": "visualization",
+    "_source": {
+      "title": "USER ID [Web]",
+      "visState": "{\n  \"type\": \"pie\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"isDonut\": false\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"terms\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"auth\",\n        \"size\": 6,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"*\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "[Web]-VERB",
+    "_type": "visualization",
+    "_source": {
+      "title": "VERB [Web]",
+      "visState": "{\n  \"type\": \"pie\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"isDonut\": false\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"terms\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"verb\",\n        \"size\": 10,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"*\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "[infra]-CORE-CONTAINER_SOURCE-vs-Time",
+    "_type": "visualization",
+    "_source": {
+      "title": "CORE CONTAINER SOURCE vs time [infra]",
+      "visState": "{\n  \"type\": \"area\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"smoothLines\": false,\n    \"scale\": \"linear\",\n    \"interpolate\": \"linear\",\n    \"mode\": \"stacked\",\n    \"times\": [],\n    \"addTimeMarker\": false,\n    \"defaultYExtents\": false,\n    \"setYExtents\": false,\n    \"yAxis\": {}\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"date_histogram\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"@timestamp\",\n        \"interval\": \"auto\",\n        \"customInterval\": \"2h\",\n        \"min_doc_count\": 1,\n        \"extended_bounds\": {}\n      }\n    },\n    {\n      \"id\": \"3\",\n      \"type\": \"significant_terms\",\n      \"schema\": \"group\",\n      \"params\": {\n        \"field\": \"container_src\",\n        \"size\": 5\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"container_src:*backend*  OR container_src:*trader* OR container_src:*haproxy* OR container_src:*straightserver*\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "ERROR-vs-time-[elk]",
+    "_type": "visualization",
+    "_source": {
+      "title": "ERROR vs time [elk]",
+      "visState": "{\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"filters\",\"schema\":\"group\",\"params\":{\"filters\":[{\"input\":{\"query\":{\"query_string\":{\"query\":\"Warning\",\"analyze_wildcard\":true}}}},{\"input\":{\"query\":{\"query_string\":{\"query\":\"Error\",\"analyze_wildcard\":true}}}},{\"input\":{\"query\":{\"query_string\":{\"query\":\"Critical\",\"analyze_wildcard\":true}}}},{\"input\":{\"query\":{\"query_string\":{\"query\":\"Fatal\",\"analyze_wildcard\":true}}}}]}}],\"listeners\":{}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"[logstash-]YYYY.MM.DD\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "[python]-REQ-DURATION-AVG-vs-time",
+    "_type": "visualization",
+    "_source": {
+      "title": "REQUEST duration max (in sec) vs time [python]",
+      "visState": "{\n  \"type\": \"histogram\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"scale\": \"linear\",\n    \"mode\": \"stacked\",\n    \"times\": [],\n    \"addTimeMarker\": false,\n    \"defaultYExtents\": false,\n    \"setYExtents\": false,\n    \"yAxis\": {}\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"avg\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"field\": \"req_duration\"\n      }\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"date_histogram\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"@timestamp\",\n        \"interval\": \"auto\",\n        \"customInterval\": \"2h\",\n        \"min_doc_count\": 1,\n        \"extended_bounds\": {}\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"*\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "[python]-REQ-DURATION-AVR",
+    "_type": "visualization",
+    "_source": {
+      "title": "REQ dur avg (in sec) [python]",
+      "visState": "{\n  \"type\": \"metric\",\n  \"params\": {\n    \"fontSize\": 60\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"avg\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"field\": \"req_duration\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"*\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "CLIENT-IP-[web]",
+    "_type": "visualization",
+    "_source": {
+      "title": "CLIENT IP [web]",
+      "visState": "{\"type\":\"tile_map\",\"params\":{\"addTooltip\":true,\"heatBlur\":15,\"heatMaxZoom\":16,\"heatMinOpacity\":0.1,\"heatNormalizeData\":true,\"heatRadius\":25,\"isDesaturated\":true,\"mapType\":\"Scaled Circle Markers\",\"spyPerPage\":10},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"geohash_grid\",\"schema\":\"segment\",\"params\":{\"field\":\"geoip.location\",\"autoPrecision\":false,\"mapZoom\":2,\"mapCenter\":[46.07323062540838,13.53515625],\"precision\":2}}],\"listeners\":{}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"[logstash-]YYYY.MM.DD\",\"query\":{\"query_string\":{\"query\":\"_type:*web\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  }
+]

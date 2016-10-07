@@ -1,0 +1,402 @@
+input {
+  tcp {
+    port => 5000
+    type => syslog
+  }
+  udp {
+    port => 5000
+    type => syslog
+  }
+  beats {
+    port => "5001"
+  }
+#  stdin { }
+}
+output {
+  elasticsearch { hosts => ["elasticsearch"] }
+  #stdout { codec => rubydebug }
+}
+
+filter {
+if [type] == "perf" {
+  #################################################
+  ### perf.log
+  #################################################
+  if [message] =~ "^\d+-\d+-\d+T\d+:\d+:\d+\+\d+\s+\|\s+vm:.*$" {
+    grok {
+      match => { "message" => "%{TIMESTAMP_ISO8601:logtime}\s*\|\s*vm:%{HOSTNAME:vm}\s*\|\s*CPU_used\(%\):%{NUMBER:cpu_used_perc:float}\s*\|\s*RAM_used\(%\):%{NUMBER:ram_used_perc:float}\s*\|\s*SWAP_used\(KB\):%{NUMBER:swap_used_kb:float}\s*\|\s*DISK_used\(%\):%{NUMBER:disk_used_perc:float}" }
+    }
+    date {
+      match => [ "logtime", "YYYY-MM-dd'T'HH:mm:ssZ" ]
+      timezone => "Europe/Paris"
+      #locale => "en"
+    }
+    mutate {
+      add_field => { "@source" => "perf" }
+      rename    => [ "source" , "file" ]
+    }
+  }
+  
+  elseif [message] =~ "^\w+\s+\|\s+UNREACHABLE!.*$" {
+    grok {
+      match => { "message" => "%{HOSTNAME:vm} \| %{HOSTNAME:status}%{GREEDYDATA}" }
+    }
+    mutate {
+      add_field => { "@source" => "perf" }
+      rename    => [ "source" , "file" ]
+    }
+  }
+
+  else { drop{} }
+}
+
+if [type] == "fail2ban" {
+  #################################################
+  ### fail2ban.log
+  #################################################
+  # 2016-05-24 19:41:47,363 fail2ban.filter : INFO   Set maxRetry = 6
+  # 2016-05-24 19:45:25,783 fail2ban.actions: WARNING [ssh] Ban 125.212.232.139
+
+  if [message] =~ ".*$" {
+    grok {
+      match => { "message" => "%{TIMESTAMP_ISO8601:logtime} %{WORD}.%{WORD:module}\s*: %{WORD:level}\s+%{GREEDYDATA:msg}" }
+    }
+    date {
+      match => [ "logtime", "YYYY-MM-dd HH:mm:ss,SSS" ]
+      timezone => "Europe/Paris"
+      #locale => "en"
+    }
+    mutate {
+      add_field => { "@source" => "fail2ban" }
+      rename    => [ "source" , "file" ]
+    }
+  }
+  # Ban/unban --> [ssh] Ban 125.212.232.139
+  if [msg] =~ "^\[\w+\] \w+ \d+.\d+.\d+.\d+$" {
+    grok {
+      match => { "msg" => "\[%{WORD:jail}\] %{WORD:action} %{IP:client_ip}" }
+    }
+    geoip { source => "client_ip" }
+  }
+
+}
+
+if [type] == "auth" {
+  #################################################
+  ### auth.log (ssh access logs)
+  #################################################
+  # May  9 11:20:05 elk-staging sshd[27491]: Accepted publickey for root from 185.19.29.253 port 39507 ssh2: RSA af:47:3f:c7:6c:17:7a:8f:62:0f:05:bf:d5:d9:75:2f
+
+  if [message] =~ ".*$" {
+    grok {
+      #match => { "message" => "(?:%{CISCOTIMESTAMP:logtime}) +(?:%{HOSTNAME:vm}|-) +(?:%{WORD:service}|-)(\(%{WORD:service3}\)|)(\[%{HOSTNAME:pid}\]|):( %{NOTSPACE:module}\(%{WORD:service2}:\w+\):|) +(%{GREEDYDATA:msg})" }
+       match => { "message" => "(?:%{CISCOTIMESTAMP:logtime}) +(?:%{HOSTNAME:vm}|-) +(?:%{HOSTNAME:service}|-)(\(%{WORD:service3}\)|)(\[%{HOSTNAME:pid}\]|):( %{NOTSPACE:module}\(%{WORD:service2}:\w+\):|) +(%{GREEDYDATA:msg})" }
+    }
+    date {
+      match => [ "logtime", "MMM  d HH:mm:ss", "MMM dd HH:mm:ss" ]
+      timezone => "Europe/Paris"
+      #locale => "en"
+    }
+    mutate {
+      add_field => { "@source" => "auth" }
+      rename    => [ "source" , "file" ]
+    }
+  }
+  # Google-Auth --> Accepted keyboard-interactive/pam for greg from 185.31.100.144 port 61643 ssh2
+  if [msg] =~ "^\w+ keyboard-interactive\/pam for \w+ from \d+.\d+.\d+.\d+ port \d+.*$" {
+    grok {
+      match => { "msg" => "(?:%{HOSTNAME:status}) (?:%{HOSTNAME:object})\/\w+ for (?:%{USER:user}) from (?:%{IP:client_ip}) port (?:%{POSINT:client_port})" }
+    }
+  }
+  # session as user --> session opened for user root by (uid=0)
+  elseif [msg] =~ "^session \w+ for user.*$" {
+    grok {
+      match => { "msg" => "(?:%{HOSTNAME:object}) +(?:%{HOSTNAME:status}) for user (?:%{HOSTNAME:user})(?: by %{USER:by}|)" }
+    }
+  }
+  # su as user (root) --> Su-Successful su for root by greg
+  elseif [msg] =~ "^\w+ su for \w+ by \w+.*$" {
+    grok {
+      match => { "msg" => "(?:%{HOSTNAME:status}) (?:%{HOSTNAME:object}) for (?:%{USER:user}) by (?:%{USER:by})" }
+    }
+  }
+  # Close connection --> Connection closed by 127.0.0.1 [preauth]
+  elseif [msg] =~ "^\w+ \w+ by \d+.\d+.\d+.\d+.*$" {
+    grok {
+      match => { "msg" => "(?:%{HOSTNAME:object}) +(?:%{HOSTNAME:status}) by (?:%{IP:client_ip}) .*" }
+    }
+  }
+  geoip { source => "client_ip" }
+}
+
+#######################
+#######################
+
+if [type] == "syslog" {
+# nc -w0 -u 192.168.33.10 5000 <<< '<134>Sep 27 01:20:32 haproxy[1]: 172.17.42.1:46563 [26/Sep/2015:21:43:31.697] https-in/1: SSL handshake failure'
+# US: 56.42.42.42 ; Paris: 86.217.118.136 ; tokyo: 119.235.235.85
+
+### Copy/paste ######################################
+
+# FIRST PARSING CUT -----------------------------------------------------------------------------------------------
+
+  #################################################
+  ### bity.com health via syslog
+  #################################################
+  #  2016-08-18T21:57:32 vm:elk-staging service:bity.com.health result: HTTP/1.1 200 OK
+
+  if [message] =~ "^\d+-\d+-\d+T\d+:\d+:\d+\svm:\S+\sservice:\S+\smsg:.*$" {
+      grok {
+        match => { "message" => "%{TIMESTAMP_ISO8601} vm:%{HOSTNAME:vm} service:%{HOSTNAME:service} msg:\s*%{GREEDYDATA:msg}" }
+      }
+  }
+
+  #################################################
+  ### haproxy logs via syslog
+  #################################################
+  #   <141>Sep 23 12:47:33 haproxy[1]: Proxy https-in started.
+
+  if [message] =~ "<\d+>\w+\s+\d+\s+\d+:\d+:\d+\s+\w+\[\d+\]: .*$" {
+      grok {
+        match => { "message" => "%{SYSLOG5424PRI}%{CISCOTIMESTAMP} +(?:%{HOSTNAME:container}|-)\[\d\]: +%{GREEDYDATA:msg}" }
+      }
+  }
+
+  #################################################
+  ### Container logs via docker log-driver
+  #################################################
+  # Old docker format: <131>2016-05-12T13:29:04+02:00 tdengine docker/trader[846]: [2016-05-12 11:29:04,189: INFO/MainProcess] Task liquidities.tasks.execute_liquidity_funding_operations[a321$
+  if [message] =~ "^<\d+>\d+-\d+-\d+T\d+:\d+:\d+\+\d+:\d+ \D+ \D+\[\d+\]: .*$" {
+    grok {
+      match => { "message" => "%{SYSLOG5424PRI}+(?:%{TIMESTAMP_ISO8601:syslog_time}|-) +(?:%{HOSTNAME:vm}|-) +(\w+/%{NOTSPACE:container}\[\d+\]): +%{GREEDYDATA:msg}" }
+    }
+  }
+
+  # New docker >1.10 format no RFC: <27>2016-05-12T13:19:23Z backendpublic docker/backendpublic[844]:         "error-text": "Illegal Sender Address - rejected",
+  # or old staff                    <14>2016-05-23T00:09:08Z 6a6bad0fcc5c cocky_albattani[1]: /var/lib/postgresql/9.3/main/pg_clog/0024
+  if [message] =~ "^<\d+>\d+-\d+-\d+T\d+:\d+:\d+Z \w+ (docker\/|)\w+\[\d+\]: .*$" {
+    grok {
+      match => { "message" => "%{SYSLOG5424PRI}+(?:%{TIMESTAMP_ISO8601:syslog_time}|-) +(?:%{HOSTNAME:vm}|-) +((\w+/|)%{NOTSPACE:container}\[\d+\]): +%{GREEDYDATA:msg}" }
+    }
+  }
+
+  # old format:  <30>May 18 14:02:58 docker/backendadmin[813]: 185.19.28.64 - - [18/May/2016:14:02:58 +0000] "GET /static/grappelli_nested/css/grp_nested_inline.css HTTP/1$
+  if [message] =~ "^<\d+>\s*\w+\s+\d+\s\d+:\d+:\d+\s\w+\/\S+\[\d+\]:.*$" {
+    grok {
+      # match => { "message" => "%{SYSLOG5424PRI} +(?:%{CISCOTIMESTAMP:syslog_time}|-) +(?:%{HOSTNAME:vm}|-) +(\w+/%{NOTSPACE:container}\[\d+\]): +%{GREEDYDATA:msg}" }
+      match => { "message" => "%{SYSLOG5424PRI}+(\s|)+(?:%{CISCOTIMESTAMP:syslog_time}|-)+(?: %{HOSTNAME:vm}|)+( \w+/%{NOTSPACE:container}\[\d+\]): +%{GREEDYDATA:msg}" }
+    }
+    #date {
+      #match => [ "syslog_time", "yyyy-MM-dd'T'HH:mm:ss.SSSSSZ+0200", "YYYY-MM-dd'T'HH:mm:ssZ" ]
+      #target => "@timestamp"
+      #locale => "en"
+      #timezone => "UTC"
+  }
+
+  # New docker format 1.10 RFC 3164: <30> Apr 27 12:41:10 elk-staging docker/kibana[850]: {"name":"Kibana","hostnam....
+  #if [message] =~ "^<\d+>(\s|)\w+ \d+ \d+:\d+:\d+(\s\S+|)\s\w+\/\S+\[\d+\]: .*$" {
+  if [message] =~ "^<\d+>\s*\w+\s+\d+\s\d+:\d+:\d+\s\S+\s\w+\/\S+\[\d+\]:.*$" {
+  #else {
+    grok {
+      match => { "message" => "%{SYSLOG5424PRI} +(?:%{CISCOTIMESTAMP:syslogtime}|-)+ (?:%{HOSTNAME:vm} |)+(\w+/%{HOSTNAME:container}\[\d+\]): +%{GREEDYDATA:msg}" }
+    }
+    date {
+      match => [ "syslogtime", "MMM  d HH:mm:ss", "MMM dd HH:mm:ss" ]
+      #target => "@timestamp"
+      #locale => "en"
+      timezone => "UTC"
+      #timezone => "Europe/Paris"
+    }
+  }
+
+# SECOND PARSING CUT ------------------------------------------------------------------------------------------------
+  ############################################
+  ### Bitcoin
+  ############################################
+  # <134> Jul  6 10:03:53 bitcoin1-staging docker/bitcoin[24859]: 2016-07-06 10:03:53 UpdateTip: new best=000000000000000002409edba86a057ccd469c6811a165a46b40200f981d6084  height=419521  log2_work=84.944703  tx=140698803  date=2016-07-06 10:02:49 progress=1.000000  cache=34.9MiB(22491tx)
+
+    if "bitcoin" in [container] and "UpdateTip: new best=" in [msg] {
+    grok {
+      match => { "msg" => "%{TIMESTAMP_ISO8601} %{WORD}: new best=%{NOTSPACE:new_best}\s+height=%{INT:blocks:int}\s+log2_work=%{BASE10NUM:log2_work:float}\s+tx=%{INT:tx:int}\s+date=%{TIMESTAMP_ISO8601}\s+progress=%{BASE10NUM:progress:float}\s+cache=%{HOSTNAME:cache}\(%{INT:nb_tx:int}tx\)" }
+    }
+    #mutate {
+    #  replace => [ "@source", "trader" ]
+    #}
+  }
+
+  ############################################
+  ### Ethereum
+  ############################################
+  # I0706 09:25:45.231367 core/blockchain.go:964] imported 1 block(s) (0 queued 0 ignored) including 1 txs in 5.342315ms. #1834392 [cd72ad23 / cd72ad23]
+
+  if "ethereum" in [container] and "] imported " in [msg] {
+    grok {
+      match => { "msg" => "I%{MONTHNUM}%{MONTHDAY} %{TIME} %{NOTSPACE:program} %{WORD} %{INT:nb_block:int} %{GREEDYDATA} #%{INT:blocks:int} %{GREEDYDATA}" }
+    }
+    #mutate {
+    #  replace => [ "@source", "trader" ]
+    #}
+  }
+
+  ############################################
+  ### Trader
+  ############################################
+  # <27>2015-09-24T12:32:00+02:00 sbex-test docker/trader[29779]: [2015-09-24 12:32:00,067: INFO/MainProcess] Received task: exchange_rates.tasks.update_crypto_exchange_rates_task[07152fb3-0709-47e4-9afa-8f567dd7f913]
+  # <27>2015-09-24T12:32:00+02:00 sbex-test docker/trader[29779]: [2015-09-11 22:06:03,194: INFO/Worker-2] [CC] [ORDER_PROCESSED] order 747 of 2.309304557551102600554048349 BTC in queue for sending to 1KQDeT9y93jUc4nJab3iwbp11ShqVs6k2E
+
+  if [msg] =~ "^\[(\d+|-)+\s(\d+|:|,)+\s\w+\/\S+\].*" {
+    grok {
+      match => { "msg" => "\[%{TIMESTAMP_ISO8601:trader_time}: %{WORD:level}/%{NOTSPACE:process}\](\s+\[%{NOTSPACE:app}\]|)(\s+\[%{NOTSPACE:status}\]|)\s+%{GREEDYDATA:output}$" }
+    }
+    mutate {
+      replace => [ "@source", "trader" ]
+    }
+  }
+
+  ############################################
+  ### HaProxy
+  ############################################
+  # http://www.haproxy.org/download/1.4/doc/configuration.txt
+
+  # <134>Sep 27 01:20:32 haproxy[1]: 172.17.42.1:46563 [26/Sep/2015:21:43:31.697] https-in/1: SSL handshake failure
+  if [msg] =~ "^(?:[0-9]{1,3}\.){3}[0-9]{1,3}:\d+ \[\S+\] \S+: .*" {
+    grok {
+      match => { "msg" => "%{IP:client_ip}:%{POSINT:client_port:int} %{SYSLOG5424SD:accept_date} %{NOTSPACE:frontend}/\d+: %{GREEDYDATA:output}" }
+    }
+    mutate {
+      replace => [ "@source", "haproxy" ]
+      add_field => { "vm" => "lbbity" }
+    }
+    geoip { source => "client_ip" }
+    useragent { source => agent }
+  }
+
+  # <134>Sep 23 14:52:13 haproxy[1]: 192.168.33.1:5504 [23/Sep/2015:14:52:13.758] https-in~ www_backend/fastcoin 34/0/0/2/42 200 19578 - - ---- 3/3/0/1/0 0/0 "GET /fonts/noto-700.woff HTTP/1.$
+  elseif [msg] =~ "^(?:[0-9]{1,3}\.){3}[0-9]{1,3}:\d+ \[\S+\] \S+ \S+ .*" {
+    grok {
+      match => { "msg" => "%{IP:client_ip}:%{POSINT:client_port:int} %{SYSLOG5424SD:accept_date} %{NOTSPACE:frontend} %{NOTSPACE:backend}/%{NOTSPACE:server} %{INT:tq:int}\/%{INT:tw:int}/%{INT:tc:int}/%{INT:tr:int}/%{INT:tt:int} %{INT:response:int} %{INT:bytes_read:int} %{NOTSPACE:captured_request_cookie} %{NOTSPACE:captured_response_cookie} %{NOTSPACE:termination_state} %{INT:actconn:int}/%{INT:feconn:int}/%{INT:beconn:int}/%{INT:srv_conn:int}/%{INT:retries:int} %{INT:srv_queue:int}/%{INT:backend_queue:int} \W(%{NOTSPACE:verb}\s|)%{NOTSPACE:request}(\s%{NOTSPACE:http_version}|)" }
+    }
+    mutate {
+      replace => [ "@source", "haproxy" ]
+      add_field => { "vm" => "lbbity" }
+    }
+    geoip { source => "client_ip" }
+    useragent { source => agent }
+  }
+
+  ############################################
+  ### Web (Nginx proxies or bakendtrader)
+  ############################################
+  # <14>2015-07-20T17:19:16Z 456fe9ffba31 logging_logstash_1[1]: 56.42.42.42 - - [24/Aug/2015:12:11:36 +0000] "GET /api/doc/schema/currency?Authorization=ApiKey%20userame:apikey HTTP/1.1" 301 5 "http://preprod:8000/api/doc/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:39.0) Gecko/20100101 Firefox/39.0"
+
+  if [msg] =~ "[?:[0-9]{1,3}\.){3}[0-9]{1,3}|-] [?:[0-9]{1,3}\.){3}[0-9]{1,3}|-] (\w+|-) \[.*\].*$" {
+    grok {
+      match => { "msg" => "%{COMBINEDAPACHELOG}( %{QS:gzip_ratio}|)" }
+    }
+
+    mutate {
+      rename => [ "clientip" , "client_ip" ]
+      replace => [ "@source", "web" ]
+      rename => [ "timestamp" , "web_time" ]
+      convert => [ "response", "integer" ]
+      convert => [ "bytes", "integer" ]
+
+      # for useragent:
+      rename => [ "name" , "browser_name" ]
+      rename => [ "major" , "browser_maj" ]
+      rename => [ "minor" , "browser_min" ]
+      convert => [ "browser_maj", "integer" ]
+      convert => [ "browser_min", "integer" ]
+    }
+
+    geoip { source => "client_ip" }
+    useragent { source => agent }
+
+  }
+
+  ############################################
+  ### Api / python App
+  ############################################
+  # <14>2015-07-20T17:19:16Z 456fe9ffba31 logging_logstash_1[1]: INFO [API]  alexis@sbex.ch GET /api/v1/account/info/  200 72 (0.02 seconds) (2 SQL queries, 5.0 ms)
+
+  if [msg] =~ "\w+ \[API\].*$" {
+    grok {
+      match => { "msg" => "%{NOTSPACE:level} \[%{WORD}\]\s*(%{IP:client_ip}|)\s*(%{NOTSPACE:user_email}|-)\s*(%{WORD:verb}|)\s*(%{NOTSPACE:request}|)\s*(\<%{WORD:sms_gw_response}\>|)\s*(\{%{GREEDYDATA:body}\}|null|None|)\s*(%{NUMBER:response:int}|)\s*(%{NUMBER:content_len:int}|)\s*(\(%{NUMBER:req_duration:float} %{WORD:req_unit}\)|)" }
+    }
+    mutate {
+      replace => [ "@source", "api" ]
+    }
+  }
+
+  ############################################
+  ### Curator
+  ############################################
+
+  if "curator" in [container] {
+    grok {
+      match => { "msg" => "(%{TIMESTAMP_ISO8601:curator_time}|)( %{WORD:level}|)(\s*%{GREEDYDATA:output})" }
+    }
+    mutate { replace => [ "@source", "curator" ] }
+  }
+
+  ############################################
+  ### ElasticSearch
+  ############################################
+  # <30>2015-09-23T10:06:04Z vagrant-ubuntu-trusty-64 docker/elasticsearch[863]: [2015-09-23 10:06:04,397][INFO ][cluster.metadata         ] [Nut] [logstash-2015.09.23] update_mapping [syslog] (dynamic)
+
+  if "elastic" in [container] {
+    multiline {
+      # Correct 3sept2015
+      # pattern => "^%{SYSLOG5424PRI}+(?:%{TIMESTAMP_ISO8601}|-) +(?:%{HOSTNAME}|-) +(?:%{NOTSPACE}\[\d\]|-): \[%{TIMESTAMP_ISO8601}\]"
+
+      #pattern => "^%{SYSLOG5424PRI}+(?:%{TIMESTAMP_ISO8601}|-) +(?:%{HOSTNAME}|-) +(?:%{NOTSPACE}\[\d\]|-):"
+      pattern => "(?m)(%{TIMESTAMP_ISO8601})\]+\s*+(\[%{WORD}:?\s*\])+\s*+(\[%{DATA}:?\s*\])+%{GREEDYDATA}$"
+      negate => true
+      #pattern => "^\n"
+      what => "previous"
+    }
+    grok {
+      match => { "msg" => "(?m)(%{TIMESTAMP_ISO8601:elastic_time})\]+\s*+(\[%{WORD:level}:?\s*\])+\s*+(\[%{DATA:service}:?\s*\])+\s*+(\[%{DATA:node}:?\s*\])+\s*+(\[%{DATA:index}:?\s*\]|)+%{GREEDYDATA:output}" }
+    }
+    mutate { replace => [ "@source", "elasticsearch" ] }
+  }
+
+  ############################################
+  ### Kibana
+  ############################################
+
+  # <30>2015-09-23T10:11:23Z vagrant-ubuntu-trusty-64 docker/kibana[863]: {"name":"Kibana","hostname":"52ae2cbb3ae3","pid":1,"level":30,"req":{"method":"POST","url":"/elasticsearch/_msearch?timeout=0&ignore_unavailable=true&preference=1443002938107","headers":{"host":"dev.local:5601","connection":"keep-alive","content-length":"809","accept":"application/json, text/plain, */*","origin":"http://dev.local:5601","user-agent":"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.99 Safari/537.36","content-type":"application/json;charset=UTF-8","referer":"http://dev.local:5601/","accept-encoding":"gzip, deflate","accept-language":"en-US,en;q=0.8,fr;q=0.6","cookie":"__zlcmid=WreyUD6BelpUWM"},"remoteAddress":"192.168.33.1","remotePort":3759},"res":{"statusCode":200,"responseTime":177,"contentLength":339110},"msg":"POST /_msearch?timeout=0&ignore_unavailable=true&preference=1443002938107 200 - 177ms","time":"2015-09-23T10:11:23.747Z","v":0}
+
+  if "kibana" in [container] {
+    json { source => "msg" }
+    geoip { source => "req.remoteAddress" }
+
+    mutate {
+      replace => [ "@source", "kibana" ]
+      rename => [ "time", "kibana_time" ]
+      convert => [ "level", "string" ]
+    }
+  }
+
+  ############################################
+  ### Logstash
+  ############################################
+  # <27>2015-09-23T09:57:25Z vagrant-ubuntu-trusty-64 docker/logstash[863]: Sep 23, 2015 9:57:25 AM org.elasticsearch.cluster.service.InternalClusterService$UpdateTask run
+
+  if "logstash" in [container] {
+    grok {
+      patterns_dir => "/opt/logstash/conf.d/patterns"
+      match => { "msg" => "(%{DATESTAMP_12HOUR:logstash_time} |)(%{LOGLEVEL:level}: |)%{GREEDYDATA:output}" }
+    }
+    date {
+      match => [ "logstash_time", "MMM dd, YYYY hh:mm:ss aa", "MMM  d, YYYY hh:mm:ss aa" ]
+      target => "logstash_time"
+    }
+    mutate { replace => [ "@source", "logstash" ] }
+  }
+
+### END Copy/paste ######################################
+
+} # END Loop if
+
+} #END filter

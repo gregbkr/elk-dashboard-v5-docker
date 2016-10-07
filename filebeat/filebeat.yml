@@ -1,0 +1,15 @@
+filebeat:
+  prospectors:
+    -
+      paths:
+        - "/mnt/var/log/auth.log"
+      document_type: filebeat
+
+output:
+  logstash:
+    enabled: true
+    hosts: ["185.19.28.216:5001"]
+    index: logstash
+
+  console:
+    pretty: true

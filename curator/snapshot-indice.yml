@@ -1,0 +1,28 @@
+---
+# Remember, leave a key empty if there is no value.  None will be a string,
+# not a Python "NoneType"
+#
+# Also remember that all examples have 'disable_action' set to True.  If you
+# want to use this action as a template, be sure to set this to False after
+# copying it.
+actions:
+  1:
+    action: snapshot
+    description: >-
+      Snapshot selected indices to 'repository' with the snapshot name or name
+      pattern in 'name'.  Use all other options as assigned
+    options:
+      repository: index_bck
+      # Leaving name blank will result in the default 'curator-%Y%m%d%H%M%S'
+      name:
+      ignore_unavailable: False
+      include_global_state: True
+      partial: False
+      wait_for_completion: True
+      skip_repo_fs_check: False
+      timeout_override:
+      continue_if_exception: False
+      disable_action: False
+    filters:
+    - filtertype: Closed
+      exclude: True

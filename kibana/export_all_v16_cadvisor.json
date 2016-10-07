@@ -1,0 +1,1302 @@
+[
+  {
+    "_id": "API-monitoring",
+    "_type": "dashboard",
+    "_source": {
+      "title": "API monitoring",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"col\":1,\"id\":\"RESPONSE-!-equal-200-vs-time-[python]-new\",\"row\":4,\"size_x\":5,\"size_y\":3,\"type\":\"visualization\"},{\"col\":6,\"id\":\"RESPONSE-!-equal-200-[python]-new\",\"row\":4,\"size_x\":2,\"size_y\":3,\"type\":\"visualization\"},{\"col\":8,\"id\":\"RESPONSE-[python]-new\",\"row\":4,\"size_x\":2,\"size_y\":3,\"type\":\"visualization\"},{\"col\":8,\"id\":\"REQUEST-[python]-new\",\"row\":7,\"size_x\":5,\"size_y\":5,\"type\":\"visualization\"},{\"col\":1,\"id\":\"LEVEL-!-equal-info-vs-time-[python]\",\"row\":1,\"size_x\":5,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"VERB-[python]-new\",\"row\":18,\"size_x\":2,\"size_y\":3,\"type\":\"visualization\"},{\"col\":8,\"id\":\"LEVEL-[python]-new\",\"row\":1,\"size_x\":2,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"REQUEST-duration-max-(in-sec)-vs-time-[python]-new\",\"row\":7,\"size_x\":5,\"size_y\":3,\"type\":\"visualization\"},{\"col\":10,\"id\":\"USER-EMAIL-[python]-new\",\"row\":4,\"size_x\":2,\"size_y\":3,\"type\":\"visualization\"},{\"col\":6,\"id\":\"REQ-dur-avg-(in-sec)-[python]\",\"row\":7,\"size_x\":2,\"size_y\":3,\"type\":\"visualization\"},{\"col\":6,\"id\":\"SQL-duration-avg-(in-sec)-[python]\",\"row\":10,\"size_x\":2,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"[python]-SQL-DURATION-MAX-vs-time\",\"row\":10,\"size_x\":5,\"size_y\":3,\"type\":\"visualization\"},{\"col\":6,\"id\":\"LEVEL-!-equal-info-[python]-new\",\"row\":1,\"size_x\":2,\"size_y\":3,\"type\":\"visualization\"},{\"id\":\"View-[python]\",\"type\":\"search\",\"size_x\":12,\"size_y\":5,\"col\":1,\"row\":13,\"columns\":[\"container_src\",\"level\",\"user_email\",\"verb\",\"request\",\"response\",\"content_len\",\"req_duration\",\"req_unit\",\"sql_count\",\"sql_duration\"],\"sort\":[\"@timestamp\",\"desc\"]},{\"id\":\"!!-SELECT-SOURCE-TO-FILTER-!!\",\"type\":\"visualization\",\"size_x\":3,\"size_y\":3,\"col\":10,\"row\":1}]",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "WEB-Monitoring-FASTCOIN",
+    "_type": "dashboard",
+    "_source": {
+      "title": "WEB Monitoring - FASTCOIN",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"col\":1,\"id\":\"RESPONSE-!-equal-200-vs-time-[web]-new\",\"row\":1,\"size_x\":5,\"size_y\":3,\"type\":\"visualization\"},{\"col\":6,\"id\":\"RESPONSE-!-equal-200-[Web]-new\",\"row\":1,\"size_x\":2,\"size_y\":3,\"type\":\"visualization\"},{\"col\":8,\"id\":\"RESPONSE-[Web]-new\",\"row\":1,\"size_x\":2,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"UNAUTHORISED-ACCESS-vs-time-[web]-new\",\"row\":4,\"size_x\":5,\"size_y\":3,\"type\":\"visualization\"},{\"col\":6,\"id\":\"USER-ID-[Web]-new\",\"row\":4,\"size_x\":2,\"size_y\":3,\"type\":\"visualization\"},{\"col\":9,\"id\":\"CLIENT-IP-[Web]-new\",\"row\":4,\"size_x\":2,\"size_y\":3,\"type\":\"visualization\"},{\"col\":9,\"id\":\"VERB-[Web]-new\",\"row\":9,\"size_x\":2,\"size_y\":3,\"type\":\"visualization\"},{\"col\":9,\"id\":\"REQUEST-[web]-new\",\"row\":12,\"size_x\":4,\"size_y\":5,\"type\":\"visualization\"},{\"col\":1,\"id\":\"CLIENT-IP-[web]\",\"row\":7,\"size_x\":8,\"size_y\":5,\"type\":\"visualization\"},{\"col\":11,\"id\":\"COUNTRY-[web]\",\"row\":4,\"size_x\":2,\"size_y\":3,\"type\":\"visualization\"},{\"col\":5,\"id\":\"BROWSER-[web]\",\"row\":12,\"size_x\":4,\"size_y\":5,\"type\":\"visualization\"},{\"col\":1,\"id\":\"OS-ampersand-BROWSER-[web]\",\"row\":12,\"size_x\":4,\"size_y\":5,\"type\":\"visualization\"},{\"col\":1,\"columns\":[\"container_src\",\"clientip\",\"auth\",\"verb\",\"request\",\"httpversion\",\"response\",\"bytes\",\"referrer\",\"agent\",\"os\",\"browser_name\",\"browser_maj\",\"browser_min\",\"geoip.country_name\",\"geoip.city_name\"],\"id\":\"View-[web]\",\"row\":17,\"size_x\":12,\"size_y\":5,\"sort\":[\"@timestamp\",\"desc\"],\"type\":\"search\"},{\"col\":11,\"id\":\"HTTP-VERSION-[Web]-new\",\"row\":7,\"size_x\":2,\"size_y\":2,\"type\":\"visualization\"},{\"col\":9,\"id\":\"DEVICE-[web]\",\"row\":7,\"size_x\":2,\"size_y\":2,\"type\":\"visualization\"},{\"id\":\"!!-SELECT-SOURCE-TO-FILTER-!!\",\"type\":\"visualization\",\"size_x\":3,\"size_y\":3,\"col\":10,\"row\":1}]",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"query\":\"container_src:fastcoin\",\"analyze_wildcard\":true}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "WEB-Monitoring",
+    "_type": "dashboard",
+    "_source": {
+      "title": "WEB Monitoring",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"col\":1,\"id\":\"RESPONSE-!-equal-200-vs-time-[web]-new\",\"row\":1,\"size_x\":5,\"size_y\":3,\"type\":\"visualization\"},{\"col\":6,\"id\":\"RESPONSE-!-equal-200-[Web]-new\",\"row\":1,\"size_x\":2,\"size_y\":3,\"type\":\"visualization\"},{\"col\":8,\"id\":\"RESPONSE-[Web]-new\",\"row\":1,\"size_x\":2,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"UNAUTHORISED-ACCESS-vs-time-[web]-new\",\"row\":4,\"size_x\":5,\"size_y\":3,\"type\":\"visualization\"},{\"col\":6,\"id\":\"USER-ID-[Web]-new\",\"row\":4,\"size_x\":2,\"size_y\":3,\"type\":\"visualization\"},{\"col\":9,\"id\":\"CLIENT-IP-[Web]-new\",\"row\":4,\"size_x\":2,\"size_y\":3,\"type\":\"visualization\"},{\"col\":9,\"id\":\"VERB-[Web]-new\",\"row\":9,\"size_x\":2,\"size_y\":3,\"type\":\"visualization\"},{\"col\":9,\"id\":\"REQUEST-[web]-new\",\"row\":12,\"size_x\":4,\"size_y\":5,\"type\":\"visualization\"},{\"col\":1,\"id\":\"CLIENT-IP-[web]\",\"row\":7,\"size_x\":8,\"size_y\":5,\"type\":\"visualization\"},{\"col\":11,\"id\":\"COUNTRY-[web]\",\"row\":4,\"size_x\":2,\"size_y\":3,\"type\":\"visualization\"},{\"col\":5,\"id\":\"BROWSER-[web]\",\"row\":12,\"size_x\":4,\"size_y\":5,\"type\":\"visualization\"},{\"col\":1,\"id\":\"OS-ampersand-BROWSER-[web]\",\"row\":12,\"size_x\":4,\"size_y\":5,\"type\":\"visualization\"},{\"col\":1,\"columns\":[\"container_src\",\"clientip\",\"auth\",\"verb\",\"request\",\"httpversion\",\"response\",\"bytes\",\"referrer\",\"agent\",\"os\",\"browser_name\",\"browser_maj\",\"browser_min\",\"geoip.country_name\",\"geoip.city_name\"],\"id\":\"View-[web]\",\"row\":17,\"size_x\":12,\"size_y\":5,\"sort\":[\"@timestamp\",\"desc\"],\"type\":\"search\"},{\"col\":11,\"id\":\"HTTP-VERSION-[Web]-new\",\"row\":7,\"size_x\":2,\"size_y\":2,\"type\":\"visualization\"},{\"col\":9,\"id\":\"DEVICE-[web]\",\"row\":7,\"size_x\":2,\"size_y\":2,\"type\":\"visualization\"},{\"id\":\"!!-SELECT-SOURCE-TO-FILTER-!!\",\"type\":\"visualization\",\"size_x\":3,\"size_y\":3,\"col\":10,\"row\":1}]",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "ELK-Monitoring",
+    "_type": "dashboard",
+    "_source": {
+      "title": "ELK Monitoring",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"col\":7,\"id\":\"Docker-Container-Pie\",\"row\":1,\"size_x\":3,\"size_y\":3,\"type\":\"visualization\"},{\"col\":4,\"id\":\"Tags\",\"row\":7,\"size_x\":2,\"size_y\":3,\"type\":\"visualization\"},{\"col\":10,\"id\":\"@Source\",\"row\":1,\"size_x\":3,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"TAGS-vs-time\",\"row\":7,\"size_x\":3,\"size_y\":3,\"type\":\"visualization\"},{\"col\":6,\"columns\":[\"type\",\"@source\",\"tags\",\"message\",\"host\"],\"id\":\"INPUT-logstash-view\",\"row\":7,\"size_x\":7,\"size_y\":3,\"sort\":[\"@timestamp\",\"desc\"],\"type\":\"search\"},{\"col\":7,\"id\":\"ERROR-Pie\",\"row\":10,\"size_x\":2,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"ERROR-vs-time\",\"row\":10,\"size_x\":6,\"size_y\":3,\"type\":\"visualization\"},{\"col\":9,\"id\":\"ERROR-vs-!ERROR\",\"row\":10,\"size_x\":3,\"size_y\":3,\"type\":\"visualization\"},{\"col\":7,\"id\":\"TYPE\",\"row\":4,\"size_x\":3,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"[infra]-CORE-CONTAINER_SOURCE-vs-Time\",\"row\":1,\"size_x\":6,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"columns\":[\"container_host\",\"container_src\",\"container_msg\"],\"id\":\"View-[infra]\",\"row\":13,\"size_x\":12,\"size_y\":5,\"sort\":[\"@timestamp\",\"desc\"],\"type\":\"search\"},{\"id\":\"CONTAINER-SOURCE-vs-time-[infra]\",\"type\":\"visualization\",\"size_x\":6,\"size_y\":3,\"col\":1,\"row\":4}]",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "HAPROXY-Monitoring",
+    "_type": "dashboard",
+    "_source": {
+      "title": "HAPROXY Monitoring",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"id\":\"CLIENT-IP-[haproxy]\",\"type\":\"visualization\",\"size_x\":2,\"size_y\":3,\"col\":10,\"row\":1},{\"id\":\"RESPONSE-!-equal-200-[haproxy]\",\"type\":\"visualization\",\"size_x\":2,\"size_y\":3,\"col\":6,\"row\":1},{\"id\":\"RESPONSE-!-equal-200-vs-time-[haproxy]\",\"type\":\"visualization\",\"size_x\":5,\"size_y\":3,\"col\":1,\"row\":1},{\"id\":\"RESPONSE-[haproxy]\",\"type\":\"visualization\",\"size_x\":2,\"size_y\":3,\"col\":8,\"row\":1},{\"id\":\"view-[haproxy]\",\"type\":\"search\",\"size_x\":12,\"size_y\":6,\"col\":1,\"row\":4,\"columns\":[\"frontend_name\",\"client_ip\",\"client_port\",\"backend_name\",\"server_name\",\"response\",\"http_request\"],\"sort\":[\"@timestamp\",\"desc\"]}]",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "CADVISOR-Monitoring",
+    "_type": "dashboard",
+    "_source": {
+      "title": "CADVISOR Monitoring",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"col\":1,\"id\":\"RX-BYTES-[cadvisor]\",\"row\":15,\"size_x\":3,\"size_y\":3,\"type\":\"visualization\"},{\"col\":7,\"id\":\"RX-Droped-[cadvisor]\",\"row\":15,\"size_x\":3,\"size_y\":3,\"type\":\"visualization\"},{\"col\":10,\"id\":\"RX-Errors-[cadvisor]\",\"row\":15,\"size_x\":3,\"size_y\":3,\"type\":\"visualization\"},{\"col\":4,\"id\":\"RX-Packets-[cadvisor]\",\"row\":15,\"size_x\":3,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"TX-Bytes-[cadvisor]\",\"row\":18,\"size_x\":3,\"size_y\":3,\"type\":\"visualization\"},{\"col\":7,\"id\":\"TX-Dropped-[cadvisor]\",\"row\":18,\"size_x\":3,\"size_y\":3,\"type\":\"visualization\"},{\"col\":10,\"id\":\"TX-Errors-[cadvisor]\",\"row\":18,\"size_x\":3,\"size_y\":3,\"type\":\"visualization\"},{\"col\":4,\"id\":\"TX-Packets-[cadvisor]\",\"row\":18,\"size_x\":3,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"columns\":[\"machine_name\",\"container_Name\",\"container_stats.cpu.usage.total\",\"container_stats.cpu.usage.system\",\"container_stats.cpu.usage.user\",\"container_stats.cpu.usage.per_cpu_usage\",\"container_stats.cpu.load_average\"],\"id\":\"CPU-View-[cadvisor]\",\"row\":21,\"size_x\":12,\"size_y\":3,\"sort\":[\"container_stats.timestamp\",\"desc\"],\"type\":\"search\"},{\"col\":1,\"columns\":[\"machine_name\",\"container_Name\",\"container_stats.memory.usage\",\"container_stats.memory.working_set\",\"container_stats.memory.container_data.pgfault\",\"container_stats.memory.container_data.pgmajfault\",\"container_stats.memory.hierarchical_data.pgfault\",\"container_stats.memory.hierarchical_data.pgmajfault\"],\"id\":\"MEMORY-View-[cadvisor]\",\"row\":24,\"size_x\":12,\"size_y\":3,\"sort\":[\"container_stats.timestamp\",\"desc\"],\"type\":\"search\"},{\"col\":1,\"columns\":[\"machine_name\",\"container_Name\",\"container_stats.network.name\",\"container_stats.network.interfaces\",\"container_stats.network.rx_bytes\",\"container_stats.network.rx_packets\",\"container_stats.network.rx_dropped\",\"container_stats.network.rx_errors\",\"container_stats.network.tx_packets\",\"container_stats.network.tx_bytes\",\"container_stats.network.tx_dropped\",\"container_stats.network.tx_errors\"],\"id\":\"NETWORK-View-[cadvisor]\",\"row\":27,\"size_x\":12,\"size_y\":3,\"sort\":[\"container_stats.timestamp\",\"desc\"],\"type\":\"search\"},{\"col\":1,\"columns\":[\"machine_name\",\"container_Name\",\"container_stats.filesystem\",\"container_stats.diskio.io_serviced\",\"container_stats.diskio.io_service_bytes\"],\"id\":\"DISK-View-[cadvisor]\",\"row\":30,\"size_x\":12,\"size_y\":3,\"sort\":[\"container_stats.timestamp\",\"desc\"],\"type\":\"search\"},{\"col\":1,\"columns\":[\"machine_name\",\"container_Name\",\"container_stats.task_stats.nr_running\",\"container_stats.task_stats.nr_io_wait\",\"container_stats.task_stats.nr_sleeping\",\"container_stats.task_stats.nr_stopped\",\"container_stats.task_stats.nr_uninterruptible\"],\"id\":\"TASK-View-[cadvisor]\",\"row\":33,\"size_x\":12,\"size_y\":3,\"sort\":[\"container_stats.timestamp\",\"desc\"],\"type\":\"search\"},{\"col\":1,\"id\":\"CPU-TOTAL-[cadvisor]\",\"row\":1,\"size_x\":6,\"size_y\":6,\"type\":\"visualization\"},{\"col\":7,\"id\":\"CPU-SYSTEM-[cadvisor]\",\"row\":4,\"size_x\":3,\"size_y\":3,\"type\":\"visualization\"},{\"col\":7,\"id\":\"CPU-USER-[cadvisor]\",\"row\":1,\"size_x\":3,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"MEM-TOTAL-USAGE-[cadvisor]\",\"row\":7,\"size_x\":6,\"size_y\":4,\"type\":\"visualization\"},{\"col\":7,\"id\":\"MEM-HOT-[cadvisor]\",\"row\":7,\"size_x\":4,\"size_y\":4,\"type\":\"visualization\"},{\"col\":1,\"id\":\"MEM-Page-Fault-[cadvisor]\",\"row\":11,\"size_x\":6,\"size_y\":4,\"type\":\"visualization\"},{\"col\":7,\"id\":\"MEM-Major-Page-Fault-[cadvisor]\",\"row\":11,\"size_x\":4,\"size_y\":4,\"type\":\"visualization\"},{\"id\":\"~~~~>-SELECT-Container_Name-TO-FILTER-<~~~~-[cadvisor]\",\"type\":\"visualization\",\"size_x\":3,\"size_y\":4,\"col\":10,\"row\":1},{\"id\":\"~~~~>-SELECT-machine_Name-(cadvisor-on-host)-TO-FILTER-<~~~~-[cadvisor]\",\"type\":\"visualization\",\"size_x\":3,\"size_y\":2,\"col\":10,\"row\":5}]",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "NotLogSince15min",
+    "_type": "search",
+    "_source": {
+      "title": "NotLogSince15min",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"[logstash-]YYYY.MM.DD\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"fragment_size\":2147483647},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "INPUT-logstash-view",
+    "_type": "search",
+    "_source": {
+      "title": "VIEW INPUT for TAGS  [elk]",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "type",
+        "@source",
+        "tags",
+        "message",
+        "host"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"tags:*parsefailure\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"highlight\": {\n    \"pre_tags\": [\n      \"@kibana-highlighted-field@\"\n    ],\n    \"post_tags\": [\n      \"@/kibana-highlighted-field@\"\n    ],\n    \"fields\": {\n      \"*\": {}\n    },\n    \"fragment_size\": 2147483647\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "Docker_events_view",
+    "_type": "search",
+    "_source": {
+      "title": "Docker_events_view",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "logspout_fwd_id",
+        "container_src",
+        "container_msg"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"[logstash-]YYYY.MM.DD\",\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"fragment_size\":2147483647},\"filter\":[],\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}}}"
+      }
+    }
+  },
+  {
+    "_id": "View-[infra]",
+    "_type": "search",
+    "_source": {
+      "title": "View [infra]",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "container_host",
+        "container_src",
+        "container_msg"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"[logstash-]YYYY.MM.DD\",\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"fragment_size\":2147483647},\"filter\":[],\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}"
+      }
+    }
+  },
+  {
+    "_id": "View-[web]",
+    "_type": "search",
+    "_source": {
+      "title": "View [web]",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "container_src",
+        "clientip",
+        "auth",
+        "verb",
+        "request",
+        "httpversion",
+        "response",
+        "bytes",
+        "referrer",
+        "agent",
+        "os",
+        "browser_name",
+        "browser_maj",
+        "browser_min",
+        "geoip.country_name",
+        "geoip.city_name"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"highlight\": {\n    \"pre_tags\": [\n      \"@kibana-highlighted-field@\"\n    ],\n    \"post_tags\": [\n      \"@/kibana-highlighted-field@\"\n    ],\n    \"fields\": {\n      \"*\": {}\n    },\n    \"fragment_size\": 2147483647\n  },\n  \"filter\": [],\n  \"query\": {\n    \"query_string\": {\n      \"analyze_wildcard\": true,\n      \"query\": \"@source:web\"\n    }\n  }\n}"
+      }
+    }
+  },
+  {
+    "_id": "View-[python]",
+    "_type": "search",
+    "_source": {
+      "title": "View [api]",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "container_src",
+        "level",
+        "user_email",
+        "verb",
+        "request",
+        "response",
+        "content_len",
+        "req_duration",
+        "req_unit",
+        "sql_count",
+        "sql_duration"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"analyze_wildcard\": true,\n      \"query\": \"@source:api\"\n    }\n  },\n  \"highlight\": {\n    \"pre_tags\": [\n      \"@kibana-highlighted-field@\"\n    ],\n    \"post_tags\": [\n      \"@/kibana-highlighted-field@\"\n    ],\n    \"fields\": {\n      \"*\": {}\n    },\n    \"fragment_size\": 2147483647\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "view-[haproxy]",
+    "_type": "search",
+    "_source": {
+      "title": "view [haproxy]",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "frontend_name",
+        "client_ip",
+        "client_port",
+        "backend_name",
+        "server_name",
+        "response",
+        "http_request"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"[logstash-]YYYY.MM.DD\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"@source:haproxy\"}},\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"fragment_size\":2147483647},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "NETWORK-View-[cadvisor]",
+    "_type": "search",
+    "_source": {
+      "title": "NETWORK View [cadvisor]",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "machine_name",
+        "container_Name",
+        "container_stats.network.name",
+        "container_stats.network.interfaces",
+        "container_stats.network.rx_bytes",
+        "container_stats.network.rx_packets",
+        "container_stats.network.rx_dropped",
+        "container_stats.network.rx_errors",
+        "container_stats.network.tx_packets",
+        "container_stats.network.tx_bytes",
+        "container_stats.network.tx_dropped",
+        "container_stats.network.tx_errors"
+      ],
+      "sort": [
+        "container_stats.timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"cadvisor\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"fragment_size\":2147483647},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "MEMORY-View-[cadvisor]",
+    "_type": "search",
+    "_source": {
+      "title": "MEMORY View [cadvisor]",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "machine_name",
+        "container_Name",
+        "container_stats.memory.usage",
+        "container_stats.memory.working_set",
+        "container_stats.memory.container_data.pgfault",
+        "container_stats.memory.container_data.pgmajfault",
+        "container_stats.memory.hierarchical_data.pgfault",
+        "container_stats.memory.hierarchical_data.pgmajfault"
+      ],
+      "sort": [
+        "container_stats.timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"cadvisor\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"fragment_size\":2147483647},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "TASK-View-[cadvisor]",
+    "_type": "search",
+    "_source": {
+      "title": "TASK View [cadvisor]",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "machine_name",
+        "container_Name",
+        "container_stats.task_stats.nr_running",
+        "container_stats.task_stats.nr_io_wait",
+        "container_stats.task_stats.nr_sleeping",
+        "container_stats.task_stats.nr_stopped",
+        "container_stats.task_stats.nr_uninterruptible"
+      ],
+      "sort": [
+        "container_stats.timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"cadvisor\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"fragment_size\":2147483647},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "CPU-View-[cadvisor]",
+    "_type": "search",
+    "_source": {
+      "title": "CPU View [cadvisor]",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "machine_name",
+        "container_Name",
+        "container_stats.cpu.usage.total",
+        "container_stats.cpu.usage.system",
+        "container_stats.cpu.usage.user",
+        "container_stats.cpu.usage.per_cpu_usage",
+        "container_stats.cpu.load_average"
+      ],
+      "sort": [
+        "container_stats.timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"cadvisor\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"fragment_size\":2147483647},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "DISK-View-[cadvisor]",
+    "_type": "search",
+    "_source": {
+      "title": "DISK View [cadvisor]",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "machine_name",
+        "container_Name",
+        "container_stats.filesystem",
+        "container_stats.diskio.io_serviced",
+        "container_stats.diskio.io_service_bytes"
+      ],
+      "sort": [
+        "container_stats.timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"cadvisor\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"fragment_size\":2147483647},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "ERROR-vs-!ERROR",
+    "_type": "visualization",
+    "_source": {
+      "title": "ERROR vs !ERROR [elk]",
+      "visState": "{\n  \"type\": \"pie\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"isDonut\": false\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"filters\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"filters\": [\n          {\n            \"input\": {\n              \"query\": {\n                \"query_string\": {\n                  \"query\": \"NOT (Error Warning Critical Fatal)\",\n                  \"analyze_wildcard\": true\n                }\n              }\n            }\n          },\n          {\n            \"input\": {\n              \"query\": {\n                \"query_string\": {\n                  \"query\": \"Error Warning Critical Fatal\",\n                  \"analyze_wildcard\": true\n                }\n              }\n            }\n          }\n        ]\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"*\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "ERROR-Pie",
+    "_type": "visualization",
+    "_source": {
+      "title": "ERROR [elk]",
+      "visState": "{\n  \"type\": \"pie\",\n  \"params\": {\n    \"addLegend\": true,\n    \"addTooltip\": true,\n    \"isDonut\": false,\n    \"shareYAxis\": true\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"filters\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"filters\": [\n          {\n            \"input\": {\n              \"query\": {\n                \"query_string\": {\n                  \"query\": \"Fatal\",\n                  \"analyze_wildcard\": true\n                }\n              }\n            }\n          },\n          {\n            \"input\": {\n              \"query\": {\n                \"query_string\": {\n                  \"query\": \"Critical\",\n                  \"analyze_wildcard\": true\n                }\n              }\n            }\n          },\n          {\n            \"input\": {\n              \"query\": {\n                \"query_string\": {\n                  \"query\": \"Error\",\n                  \"analyze_wildcard\": true\n                }\n              }\n            }\n          },\n          {\n            \"input\": {\n              \"query\": {\n                \"query_string\": {\n                  \"query\": \"Warning\",\n                  \"analyze_wildcard\": true\n                }\n              }\n            }\n          }\n        ]\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"analyze_wildcard\": true,\n      \"query\": \"*\"\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "@Source",
+    "_type": "visualization",
+    "_source": {
+      "title": "@SOURCE [elk]",
+      "visState": "{\n  \"type\": \"table\",\n  \"params\": {\n    \"perPage\": 10,\n    \"showPartialRows\": false,\n    \"showMeticsAtAllLevels\": false\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"terms\",\n      \"schema\": \"bucket\",\n      \"params\": {\n        \"field\": \"@source\",\n        \"size\": 10,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"*\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "ERROR-vs-time",
+    "_type": "visualization",
+    "_source": {
+      "title": "ERROR vs time [elk]",
+      "visState": "{\n  \"type\": \"area\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"smoothLines\": false,\n    \"scale\": \"linear\",\n    \"interpolate\": \"linear\",\n    \"mode\": \"stacked\",\n    \"times\": [],\n    \"addTimeMarker\": false,\n    \"defaultYExtents\": false,\n    \"setYExtents\": false,\n    \"yAxis\": {}\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"date_histogram\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"@timestamp\",\n        \"interval\": \"auto\",\n        \"customInterval\": \"2h\",\n        \"min_doc_count\": 1,\n        \"extended_bounds\": {}\n      }\n    },\n    {\n      \"id\": \"3\",\n      \"type\": \"filters\",\n      \"schema\": \"group\",\n      \"params\": {\n        \"filters\": [\n          {\n            \"input\": {\n              \"query\": {\n                \"query_string\": {\n                  \"query\": \"Warning\",\n                  \"analyze_wildcard\": true\n                }\n              }\n            }\n          },\n          {\n            \"input\": {\n              \"query\": {\n                \"query_string\": {\n                  \"query\": \"Error\",\n                  \"analyze_wildcard\": true\n                }\n              }\n            }\n          },\n          {\n            \"input\": {\n              \"query\": {\n                \"query_string\": {\n                  \"query\": \"Critical\",\n                  \"analyze_wildcard\": true\n                }\n              }\n            }\n          },\n          {\n            \"input\": {\n              \"query\": {\n                \"query_string\": {\n                  \"query\": \"Fatal\",\n                  \"analyze_wildcard\": true\n                }\n              }\n            }\n          }\n        ]\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"filter\": [],\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"*\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"highlight\": {\n    \"pre_tags\": [\n      \"@kibana-highlighted-field@\"\n    ],\n    \"post_tags\": [\n      \"@/kibana-highlighted-field@\"\n    ],\n    \"fields\": {\n      \"*\": {}\n    },\n    \"fragment_size\": 2147483647\n  }\n}"
+      }
+    }
+  },
+  {
+    "_id": "TAGS-vs-time",
+    "_type": "visualization",
+    "_source": {
+      "title": "TAGS vs time [elk]",
+      "visState": "{\n  \"type\": \"area\",\n  \"params\": {\n    \"addLegend\": true,\n    \"addTimeMarker\": false,\n    \"addTooltip\": true,\n    \"defaultYExtents\": false,\n    \"interpolate\": \"linear\",\n    \"mode\": \"stacked\",\n    \"scale\": \"linear\",\n    \"setYExtents\": false,\n    \"shareYAxis\": true,\n    \"smoothLines\": false,\n    \"times\": [],\n    \"yAxis\": {}\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"date_histogram\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"@timestamp\",\n        \"interval\": \"auto\",\n        \"customInterval\": \"2h\",\n        \"min_doc_count\": 1,\n        \"extended_bounds\": {}\n      }\n    },\n    {\n      \"id\": \"3\",\n      \"type\": \"terms\",\n      \"schema\": \"group\",\n      \"params\": {\n        \"field\": \"tags\",\n        \"size\": 5,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"analyze_wildcard\": true,\n      \"query\": \"*\"\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "TYPE",
+    "_type": "visualization",
+    "_source": {
+      "title": "TYPE [elk]",
+      "visState": "{\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"params\": {},\n      \"schema\": \"metric\",\n      \"type\": \"count\"\n    },\n    {\n      \"id\": \"2\",\n      \"params\": {\n        \"field\": \"type.raw\",\n        \"order\": \"desc\",\n        \"orderBy\": \"1\",\n        \"size\": 5\n      },\n      \"schema\": \"segment\",\n      \"type\": \"terms\"\n    }\n  ],\n  \"listeners\": {},\n  \"params\": {\n    \"addLegend\": true,\n    \"addTooltip\": true,\n    \"isDonut\": false,\n    \"shareYAxis\": true\n  },\n  \"type\": \"pie\"\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"analyze_wildcard\": true,\n      \"query\": \"*\"\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "Tags",
+    "_type": "visualization",
+    "_source": {
+      "title": "TAGS [elk]",
+      "visState": "{\n  \"type\": \"table\",\n  \"params\": {\n    \"perPage\": 10,\n    \"showPartialRows\": false,\n    \"showMeticsAtAllLevels\": false\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"terms\",\n      \"schema\": \"bucket\",\n      \"params\": {\n        \"field\": \"tags\",\n        \"size\": 5,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"*\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "Docker-Container-Pie",
+    "_type": "visualization",
+    "_source": {
+      "title": "CONTAINER SOURCE [infra]",
+      "visState": "{\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"params\": {},\n      \"schema\": \"metric\",\n      \"type\": \"count\"\n    },\n    {\n      \"id\": \"2\",\n      \"params\": {\n        \"field\": \"container_src\",\n        \"order\": \"desc\",\n        \"orderBy\": \"1\",\n        \"size\": 5\n      },\n      \"schema\": \"segment\",\n      \"type\": \"terms\"\n    }\n  ],\n  \"listeners\": {},\n  \"params\": {\n    \"addLegend\": true,\n    \"addTooltip\": true,\n    \"isDonut\": false,\n    \"shareYAxis\": true\n  },\n  \"type\": \"pie\"\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"analyze_wildcard\": true,\n      \"query\": \"*\"\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "[infra]-CORE-CONTAINER_SOURCE-vs-Time",
+    "_type": "visualization",
+    "_source": {
+      "title": "CORE CONTAINER SOURCE vs time [infra]",
+      "visState": "{\n  \"type\": \"area\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"smoothLines\": false,\n    \"scale\": \"linear\",\n    \"interpolate\": \"linear\",\n    \"mode\": \"stacked\",\n    \"times\": [],\n    \"addTimeMarker\": false,\n    \"defaultYExtents\": false,\n    \"setYExtents\": false,\n    \"yAxis\": {}\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"date_histogram\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"@timestamp\",\n        \"interval\": \"auto\",\n        \"customInterval\": \"2h\",\n        \"min_doc_count\": 1,\n        \"extended_bounds\": {}\n      }\n    },\n    {\n      \"id\": \"3\",\n      \"type\": \"significant_terms\",\n      \"schema\": \"group\",\n      \"params\": {\n        \"field\": \"container_src\",\n        \"size\": 5\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"container_src:*backend*  OR container_src:*trader* OR container_src:*haproxy* OR container_src:*straightserver*\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "ERROR-vs-time-[elk]",
+    "_type": "visualization",
+    "_source": {
+      "title": "ERROR vs time [elk]",
+      "visState": "{\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"filters\",\"schema\":\"group\",\"params\":{\"filters\":[{\"input\":{\"query\":{\"query_string\":{\"query\":\"Warning\",\"analyze_wildcard\":true}}}},{\"input\":{\"query\":{\"query_string\":{\"query\":\"Error\",\"analyze_wildcard\":true}}}},{\"input\":{\"query\":{\"query_string\":{\"query\":\"Critical\",\"analyze_wildcard\":true}}}},{\"input\":{\"query\":{\"query_string\":{\"query\":\"Fatal\",\"analyze_wildcard\":true}}}}]}}],\"listeners\":{}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"[logstash-]YYYY.MM.DD\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "DEVICE-[web]",
+    "_type": "visualization",
+    "_source": {
+      "title": "DEVICE [web]",
+      "visState": "{\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"device.raw\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"[logstash-]YYYY.MM.DD\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Docker_Event_Bar",
+    "_type": "visualization",
+    "_source": {
+      "title": "Docker_Event_Bar",
+      "visState": "{\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{},\"spyPerPage\":10},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"[logstash-]YYYY.MM.DD\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Docker_Top_logspout_fwd",
+    "_type": "visualization",
+    "_source": {
+      "title": "Docker_Top_logspout_fwd",
+      "visState": "{\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"split\",\"params\":{\"field\":\"logspout_fwd_id\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"row\":true}}],\"listeners\":{}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"[logstash-]YYYY.MM.DD\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Docker_Top_Container",
+    "_type": "visualization",
+    "_source": {
+      "title": "Docker_Top_Container",
+      "visState": "{\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{},\"spyPerPage\":10},\"aggs\":[{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"container_src\",\"size\":20,\"order\":\"desc\",\"orderBy\":\"2\"}},{\"id\":\"2\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}}],\"listeners\":{}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"[logstash-]YYYY.MM.DD\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "top-container",
+    "_type": "visualization",
+    "_source": {
+      "title": "top container",
+      "visState": "{\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{},\"spyPerPage\":10},\"aggs\":[{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"container_src\",\"size\":20,\"order\":\"desc\",\"orderBy\":\"2\"}},{\"id\":\"2\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}}],\"listeners\":{}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"[logstash-]YYYY.MM.DD\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "BROWSER-FASTCOIN-[web]",
+    "_type": "visualization",
+    "_source": {
+      "title": "BROWSER FASTCOIN [web]",
+      "visState": "{\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"params\": {},\n      \"schema\": \"metric\",\n      \"type\": \"count\"\n    },\n    {\n      \"id\": \"2\",\n      \"params\": {\n        \"field\": \"browser_name.raw\",\n        \"order\": \"desc\",\n        \"orderBy\": \"1\",\n        \"size\": 5\n      },\n      \"schema\": \"segment\",\n      \"type\": \"terms\"\n    },\n    {\n      \"id\": \"3\",\n      \"params\": {\n        \"field\": \"browser_maj\",\n        \"order\": \"desc\",\n        \"orderBy\": \"1\",\n        \"size\": 5\n      },\n      \"schema\": \"segment\",\n      \"type\": \"terms\"\n    },\n    {\n      \"id\": \"4\",\n      \"params\": {\n        \"field\": \"browser_min\",\n        \"order\": \"desc\",\n        \"orderBy\": \"1\",\n        \"size\": 5\n      },\n      \"schema\": \"segment\",\n      \"type\": \"terms\"\n    }\n  ],\n  \"listeners\": {},\n  \"params\": {\n    \"addLegend\": true,\n    \"addTooltip\": true,\n    \"isDonut\": false,\n    \"shareYAxis\": true\n  },\n  \"type\": \"pie\"\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"@source:web AND container_src:*fastcoin*\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "BROWSER-[web]",
+    "_type": "visualization",
+    "_source": {
+      "title": "BROWSER [web]",
+      "visState": "{\n  \"type\": \"pie\",\n  \"params\": {\n    \"addLegend\": true,\n    \"addTooltip\": true,\n    \"isDonut\": false,\n    \"shareYAxis\": true\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"terms\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"browser_name.raw\",\n        \"size\": 5,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    },\n    {\n      \"id\": \"3\",\n      \"type\": \"terms\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"browser_maj\",\n        \"size\": 5,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    },\n    {\n      \"id\": \"4\",\n      \"type\": \"terms\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"browser_min\",\n        \"size\": 5,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"analyze_wildcard\": true,\n      \"query\": \"@source:web\"\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "RESPONSE-!-equal-200-[Web]-new",
+    "_type": "visualization",
+    "_source": {
+      "title": "RESPONSE != 200 [Web]",
+      "visState": "{\n  \"type\": \"pie\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"isDonut\": false\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"terms\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"response\",\n        \"size\": 6,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"@source:web AND NOT response:\\\"200\\\"\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "CLIENT-IP-[Web]-new",
+    "_type": "visualization",
+    "_source": {
+      "title": "CLIENT IP [Web]",
+      "visState": "{\n  \"type\": \"pie\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"isDonut\": false\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"terms\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"clientip\",\n        \"size\": 6,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"@source:web AND NOT response:\\\"200\\\"\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "RESPONSE-!-equal-200-vs-time-[web]-new",
+    "_type": "visualization",
+    "_source": {
+      "title": "RESPONSE !=200 vs time [web]",
+      "visState": "{\n  \"type\": \"histogram\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"scale\": \"linear\",\n    \"mode\": \"stacked\",\n    \"times\": [],\n    \"addTimeMarker\": false,\n    \"defaultYExtents\": false,\n    \"setYExtents\": false,\n    \"yAxis\": {}\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"date_histogram\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"@timestamp\",\n        \"interval\": \"auto\",\n        \"customInterval\": \"2h\",\n        \"min_doc_count\": 1,\n        \"extended_bounds\": {}\n      }\n    },\n    {\n      \"id\": \"3\",\n      \"type\": \"terms\",\n      \"schema\": \"group\",\n      \"params\": {\n        \"field\": \"response\",\n        \"size\": 10,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"@source:web AND NOT response:\\\"200\\\"\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "CLIENT-IP-[web]",
+    "_type": "visualization",
+    "_source": {
+      "title": "CLIENT MAP [web]",
+      "visState": "{\n  \"type\": \"tile_map\",\n  \"params\": {\n    \"mapType\": \"Scaled Circle Markers\",\n    \"isDesaturated\": true,\n    \"heatMaxZoom\": 16,\n    \"heatMinOpacity\": 0.1,\n    \"heatRadius\": 25,\n    \"heatBlur\": 15,\n    \"heatNormalizeData\": true,\n    \"addTooltip\": true\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"geohash_grid\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"geoip.location\",\n        \"autoPrecision\": true,\n        \"precision\": 2\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"@source:web\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "OS-ampersand-BROWSER-[web]",
+    "_type": "visualization",
+    "_source": {
+      "title": "OS & BROWSER [web]",
+      "visState": "{\n  \"type\": \"pie\",\n  \"params\": {\n    \"addLegend\": true,\n    \"addTooltip\": true,\n    \"isDonut\": false,\n    \"shareYAxis\": true\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"5\",\n      \"type\": \"terms\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"os_name.raw\",\n        \"size\": 5,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"terms\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"browser_name.raw\",\n        \"size\": 5,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    },\n    {\n      \"id\": \"3\",\n      \"type\": \"terms\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"browser_maj\",\n        \"size\": 5,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    },\n    {\n      \"id\": \"4\",\n      \"type\": \"terms\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"browser_min\",\n        \"size\": 5,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"analyze_wildcard\": true,\n      \"query\": \"@source:web\"\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "REFERER-FASTCOIN-[web]-tab",
+    "_type": "visualization",
+    "_source": {
+      "title": "REFERER FASTCOIN [web] tab",
+      "visState": "{\n  \"type\": \"table\",\n  \"params\": {\n    \"perPage\": 10,\n    \"showPartialRows\": false,\n    \"showMeticsAtAllLevels\": false\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"terms\",\n      \"schema\": \"bucket\",\n      \"params\": {\n        \"field\": \"referrer.raw\",\n        \"size\": 10,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"@source:web AND container_src:*fastcoin*\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "REFERER-FASTCOIN-[web]",
+    "_type": "visualization",
+    "_source": {
+      "title": "REFERER FASTCOIN [web]",
+      "visState": "{\n  \"type\": \"pie\",\n  \"params\": {\n    \"addLegend\": true,\n    \"addTooltip\": true,\n    \"isDonut\": false,\n    \"shareYAxis\": true\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"terms\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"referrer.raw\",\n        \"size\": 10,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"@source:web AND container_src:*fastcoin*\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "REQUEST-FASTCOIN-[web]",
+    "_type": "visualization",
+    "_source": {
+      "title": "REQUEST FASTCOIN [web]",
+      "visState": "{\n  \"type\": \"table\",\n  \"params\": {\n    \"perPage\": 10,\n    \"showPartialRows\": false,\n    \"showMeticsAtAllLevels\": false\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"terms\",\n      \"schema\": \"bucket\",\n      \"params\": {\n        \"field\": \"request.raw\",\n        \"size\": 7,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"@source:web AND container_src:*fastcoin*\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "HTTP-VERSION-[Web]-new",
+    "_type": "visualization",
+    "_source": {
+      "title": "HTTP VERSION [Web]",
+      "visState": "{\n  \"type\": \"pie\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"isDonut\": false\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"terms\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"httpversion\",\n        \"size\": 10,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"@source:web\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "COUNTRY-[web]",
+    "_type": "visualization",
+    "_source": {
+      "title": "COUNTRY [web]",
+      "visState": "{\n  \"type\": \"pie\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"isDonut\": false\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"terms\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"geoip.country_name.raw\",\n        \"size\": 7,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"@source:web\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "REQUEST-[web]-new",
+    "_type": "visualization",
+    "_source": {
+      "title": "REQUEST [web]",
+      "visState": "{\n  \"type\": \"table\",\n  \"params\": {\n    \"perPage\": 10,\n    \"showPartialRows\": false,\n    \"showMeticsAtAllLevels\": false\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"terms\",\n      \"schema\": \"bucket\",\n      \"params\": {\n        \"field\": \"request.raw\",\n        \"size\": 7,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"@source:web\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "UNAUTHORISED-ACCESS-vs-time-[web]-new",
+    "_type": "visualization",
+    "_source": {
+      "title": "UNAUTHORISED ACCESS vs time [web]",
+      "visState": "{\n  \"type\": \"histogram\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"scale\": \"linear\",\n    \"mode\": \"stacked\",\n    \"times\": [],\n    \"addTimeMarker\": false,\n    \"defaultYExtents\": false,\n    \"setYExtents\": false,\n    \"yAxis\": {}\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"date_histogram\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"@timestamp\",\n        \"interval\": \"auto\",\n        \"customInterval\": \"2h\",\n        \"min_doc_count\": 1,\n        \"extended_bounds\": {}\n      }\n    },\n    {\n      \"id\": \"3\",\n      \"type\": \"terms\",\n      \"schema\": \"group\",\n      \"params\": {\n        \"field\": \"auth\",\n        \"size\": 10,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"@source:web AND response:401\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "LEVEL-!-equal-info-vs-time-[python]",
+    "_type": "visualization",
+    "_source": {
+      "title": "LEVEL != info vs time [api]",
+      "visState": "{\n  \"type\": \"histogram\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"scale\": \"linear\",\n    \"mode\": \"stacked\",\n    \"times\": [],\n    \"addTimeMarker\": false,\n    \"defaultYExtents\": false,\n    \"setYExtents\": false,\n    \"yAxis\": {}\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"date_histogram\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"@timestamp\",\n        \"interval\": \"auto\",\n        \"customInterval\": \"2h\",\n        \"min_doc_count\": 1,\n        \"extended_bounds\": {}\n      }\n    },\n    {\n      \"id\": \"3\",\n      \"type\": \"terms\",\n      \"schema\": \"group\",\n      \"params\": {\n        \"field\": \"level\",\n        \"size\": 10,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"@source:api AND NOT level:info\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "RESPONSE-[Web]-new",
+    "_type": "visualization",
+    "_source": {
+      "title": "RESPONSE [Web]",
+      "visState": "{\n  \"type\": \"pie\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"isDonut\": false\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"terms\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"response\",\n        \"size\": 6,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"@source:web\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "USER-ID-[Web]-new",
+    "_type": "visualization",
+    "_source": {
+      "title": "USER ID [Web]",
+      "visState": "{\n  \"type\": \"pie\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"isDonut\": false\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"terms\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"auth\",\n        \"size\": 6,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"@source:web\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "VERB-[Web]-new",
+    "_type": "visualization",
+    "_source": {
+      "title": "VERB [Web]",
+      "visState": "{\n  \"type\": \"pie\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"isDonut\": false\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"terms\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"verb\",\n        \"size\": 10,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"@source:web\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "RESPONSE-!-equal-200-vs-time-[python]-new",
+    "_type": "visualization",
+    "_source": {
+      "title": "RESPONSE !=200 vs time [api]",
+      "visState": "{\n  \"type\": \"histogram\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"scale\": \"linear\",\n    \"mode\": \"stacked\",\n    \"times\": [],\n    \"addTimeMarker\": false,\n    \"defaultYExtents\": false,\n    \"setYExtents\": false,\n    \"yAxis\": {}\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"date_histogram\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"@timestamp\",\n        \"interval\": \"auto\",\n        \"customInterval\": \"2h\",\n        \"min_doc_count\": 1,\n        \"extended_bounds\": {}\n      }\n    },\n    {\n      \"id\": \"3\",\n      \"type\": \"terms\",\n      \"schema\": \"group\",\n      \"params\": {\n        \"field\": \"response\",\n        \"size\": 10,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"@source:api AND NOT response_status_code:\\\"200\\\"\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "[python]-LEVEL-vs-time",
+    "_type": "visualization",
+    "_source": {
+      "title": "LEVEL vs time [api]",
+      "visState": "{\n  \"type\": \"histogram\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"scale\": \"linear\",\n    \"mode\": \"stacked\",\n    \"times\": [],\n    \"addTimeMarker\": false,\n    \"defaultYExtents\": false,\n    \"setYExtents\": false,\n    \"yAxis\": {}\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"date_histogram\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"@timestamp\",\n        \"interval\": \"auto\",\n        \"customInterval\": \"2h\",\n        \"min_doc_count\": 1,\n        \"extended_bounds\": {}\n      }\n    },\n    {\n      \"id\": \"3\",\n      \"type\": \"terms\",\n      \"schema\": \"group\",\n      \"params\": {\n        \"field\": \"level\",\n        \"size\": 10,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"@source:api\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "REQUEST-duration-max-(in-sec)-vs-time-[python]-new",
+    "_type": "visualization",
+    "_source": {
+      "title": "REQUEST duration max (in sec) vs time [api]",
+      "visState": "{\n  \"type\": \"histogram\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"scale\": \"linear\",\n    \"mode\": \"stacked\",\n    \"times\": [],\n    \"addTimeMarker\": false,\n    \"defaultYExtents\": false,\n    \"setYExtents\": false,\n    \"yAxis\": {}\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"max\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"field\": \"req_duration\"\n      }\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"date_histogram\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"@timestamp\",\n        \"interval\": \"s\",\n        \"customInterval\": \"2h\",\n        \"min_doc_count\": 1,\n        \"extended_bounds\": {}\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"@source:api\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "RESPONSE-!-equal-200-[python]-new",
+    "_type": "visualization",
+    "_source": {
+      "title": "RESPONSE != 200 [api]",
+      "visState": "{\n  \"type\": \"pie\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"isDonut\": false\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"terms\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"response\",\n        \"size\": 6,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"@source:api AND NOT response:\\\"200\\\"\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "LEVEL-!-equal-info-[python]-new",
+    "_type": "visualization",
+    "_source": {
+      "title": "LEVEL != info [api]",
+      "visState": "{\n  \"type\": \"pie\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"isDonut\": false\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"terms\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"level\",\n        \"size\": 10,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"@source:api AND NOT level:info\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "REQUEST-[python]-new",
+    "_type": "visualization",
+    "_source": {
+      "title": "REQUEST [api]",
+      "visState": "{\n  \"type\": \"table\",\n  \"params\": {\n    \"perPage\": 10,\n    \"showPartialRows\": false,\n    \"showMeticsAtAllLevels\": false\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"terms\",\n      \"schema\": \"bucket\",\n      \"params\": {\n        \"field\": \"request.raw\",\n        \"size\": 7,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"@source:api\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "RESPONSE-[python]-new",
+    "_type": "visualization",
+    "_source": {
+      "title": "RESPONSE [api]",
+      "visState": "{\n  \"type\": \"pie\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"isDonut\": false\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"terms\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"response\",\n        \"size\": 6,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"@source:api\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "LEVEL-[python]-new",
+    "_type": "visualization",
+    "_source": {
+      "title": "LEVEL [api]",
+      "visState": "{\n  \"type\": \"pie\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"isDonut\": false\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"terms\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"level\",\n        \"size\": 10,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"@source:api\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "REQ-dur-avg-(in-sec)-[python]",
+    "_type": "visualization",
+    "_source": {
+      "title": "REQ dur avg (in sec) [api]",
+      "visState": "{\n  \"type\": \"metric\",\n  \"params\": {\n    \"fontSize\": 60\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"avg\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"field\": \"req_duration\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"@source:api\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "[python]-SQL-DURATION-MAX-vs-time",
+    "_type": "visualization",
+    "_source": {
+      "title": "SQL duration max (in sec) vs time [api]",
+      "visState": "{\n  \"type\": \"histogram\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"scale\": \"linear\",\n    \"mode\": \"stacked\",\n    \"times\": [],\n    \"addTimeMarker\": false,\n    \"defaultYExtents\": false,\n    \"setYExtents\": false,\n    \"yAxis\": {}\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"max\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"field\": \"sql_duration\"\n      }\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"date_histogram\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"@timestamp\",\n        \"interval\": \"auto\",\n        \"customInterval\": \"2h\",\n        \"min_doc_count\": 1,\n        \"extended_bounds\": {}\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"@source:api\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "USER-EMAIL-[python]-new",
+    "_type": "visualization",
+    "_source": {
+      "title": "USER EMAIL [api]",
+      "visState": "{\n  \"type\": \"pie\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"isDonut\": false\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"terms\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"user_email.raw\",\n        \"size\": 6,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"@source:api\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "VERB-[python]-new",
+    "_type": "visualization",
+    "_source": {
+      "title": "VERB [api]",
+      "visState": "{\n  \"type\": \"pie\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"isDonut\": false\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"terms\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"verb\",\n        \"size\": 6,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"@source:api\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "SQL-duration-avg-(in-sec)-[python]",
+    "_type": "visualization",
+    "_source": {
+      "title": "SQL duration avg (in sec) [api]",
+      "visState": "{\n  \"type\": \"metric\",\n  \"params\": {\n    \"fontSize\": 60\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"avg\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"field\": \"sql_duration\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"@source:api AND sql_count:>0\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "!!-SELECT-SOURCE-TO-FILTER-!!",
+    "_type": "visualization",
+    "_source": {
+      "title": "~~~~> SELECT SOURCE TO FILTER <~~~~",
+      "visState": "{\n  \"type\": \"pie\",\n  \"params\": {\n    \"addLegend\": true,\n    \"addTooltip\": true,\n    \"isDonut\": false,\n    \"shareYAxis\": true\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"terms\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"container_src\",\n        \"size\": 5,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"[logstash-]YYYY.MM.DD\",\n  \"query\": {\n    \"query_string\": {\n      \"analyze_wildcard\": true,\n      \"query\": \"*\"\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "RESPONSE-!-equal-200-vs-time-[haproxy]",
+    "_type": "visualization",
+    "_source": {
+      "title": "RESPONSE !=200 vs time [haproxy]",
+      "visState": "{\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"response\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"[logstash-]YYYY.MM.DD\",\"query\":{\"query_string\":{\"query\":\"@source:haproxy AND NOT response:\\\"200\\\"\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "RESPONSE-!-equal-200-[haproxy]",
+    "_type": "visualization",
+    "_source": {
+      "title": "RESPONSE != 200 [haproxy]",
+      "visState": "{\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"response\",\"size\":6,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"[logstash-]YYYY.MM.DD\",\"query\":{\"query_string\":{\"query\":\"@source:haproxy AND NOT response:\\\"200\\\"\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "RESPONSE-[haproxy]",
+    "_type": "visualization",
+    "_source": {
+      "title": "RESPONSE [haproxy]",
+      "visState": "{\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"response\",\"size\":6,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"[logstash-]YYYY.MM.DD\",\"query\":{\"query_string\":{\"query\":\"@source:haproxy\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "CLIENT-IP-[haproxy]",
+    "_type": "visualization",
+    "_source": {
+      "title": "CLIENT IP [haproxy]",
+      "visState": "{\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"client_ip\",\"size\":6,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"[logstash-]YYYY.MM.DD\",\"query\":{\"query_string\":{\"query\":\"@source:haproxy\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "CONTAINER-SOURCE-vs-time-[infra]",
+    "_type": "visualization",
+    "_source": {
+      "title": "CONTAINER SOURCE vs time [infra]",
+      "visState": "{\"type\":\"area\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"smoothLines\":false,\"scale\":\"linear\",\"interpolate\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"container_src.raw\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"[logstash-]YYYY.MM.DD\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "RX-Packets-[cadvisor]",
+    "_type": "visualization",
+    "_source": {
+      "title": "RX Packets [cadvisor]",
+      "visState": "{\"type\":\"line\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"showCircles\":true,\"smoothLines\":false,\"interpolate\":\"linear\",\"scale\":\"linear\",\"drawLinesBetweenPoints\":true,\"radiusRatio\":9,\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"container_stats.network.rx_packets\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"container_stats.timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"container_Name.raw\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"4\",\"type\":\"terms\",\"schema\":\"split\",\"params\":{\"field\":\"machine_name.raw\",\"size\":20,\"order\":\"desc\",\"orderBy\":\"1\",\"row\":true}}],\"listeners\":{}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"cadvisor\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "TX-Dropped-[cadvisor]",
+    "_type": "visualization",
+    "_source": {
+      "title": "TX Dropped [cadvisor]",
+      "visState": "{\"type\":\"line\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"showCircles\":true,\"smoothLines\":false,\"interpolate\":\"linear\",\"scale\":\"linear\",\"drawLinesBetweenPoints\":true,\"radiusRatio\":9,\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"container_stats.network.tx_dropped\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"container_stats.timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"container_Name.raw\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"4\",\"type\":\"terms\",\"schema\":\"split\",\"params\":{\"field\":\"machine_name.raw\",\"size\":20,\"order\":\"desc\",\"orderBy\":\"1\",\"row\":true}}],\"listeners\":{}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"cadvisor\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "TX-Packets-[cadvisor]",
+    "_type": "visualization",
+    "_source": {
+      "title": "TX Packets [cadvisor]",
+      "visState": "{\"type\":\"line\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"showCircles\":true,\"smoothLines\":false,\"interpolate\":\"linear\",\"scale\":\"linear\",\"drawLinesBetweenPoints\":true,\"radiusRatio\":9,\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"container_stats.network.tx_packets\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"container_stats.timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"container_Name.raw\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"4\",\"type\":\"terms\",\"schema\":\"split\",\"params\":{\"field\":\"machine_name.raw\",\"size\":20,\"order\":\"desc\",\"orderBy\":\"1\",\"row\":true}}],\"listeners\":{}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"cadvisor\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "RX-Errors-[cadvisor]",
+    "_type": "visualization",
+    "_source": {
+      "title": "RX Errors [cadvisor]",
+      "visState": "{\"type\":\"line\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"showCircles\":true,\"smoothLines\":false,\"interpolate\":\"linear\",\"scale\":\"linear\",\"drawLinesBetweenPoints\":true,\"radiusRatio\":9,\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"container_stats.network.rx_errors\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"container_stats.timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"container_Name.raw\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"4\",\"type\":\"terms\",\"schema\":\"split\",\"params\":{\"field\":\"machine_name.raw\",\"size\":20,\"order\":\"desc\",\"orderBy\":\"1\",\"row\":true}}],\"listeners\":{}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"cadvisor\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "TX-Errors-[cadvisor]",
+    "_type": "visualization",
+    "_source": {
+      "title": "TX Errors [cadvisor]",
+      "visState": "{\"type\":\"line\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"showCircles\":true,\"smoothLines\":false,\"interpolate\":\"linear\",\"scale\":\"linear\",\"drawLinesBetweenPoints\":true,\"radiusRatio\":9,\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"container_stats.network.tx_errors\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"container_stats.timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"container_Name.raw\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"4\",\"type\":\"terms\",\"schema\":\"split\",\"params\":{\"field\":\"machine_name.raw\",\"size\":20,\"order\":\"desc\",\"orderBy\":\"1\",\"row\":true}}],\"listeners\":{}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"cadvisor\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "TX-Bytes-[cadvisor]",
+    "_type": "visualization",
+    "_source": {
+      "title": "TX Bytes [cadvisor]",
+      "visState": "{\"type\":\"line\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"showCircles\":true,\"smoothLines\":false,\"interpolate\":\"linear\",\"scale\":\"linear\",\"drawLinesBetweenPoints\":true,\"radiusRatio\":9,\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"container_stats.network.tx_bytes\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"container_stats.timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"container_Name.raw\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"4\",\"type\":\"terms\",\"schema\":\"split\",\"params\":{\"field\":\"machine_name.raw\",\"size\":20,\"order\":\"desc\",\"orderBy\":\"1\",\"row\":true}}],\"listeners\":{}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"cadvisor\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "RX-Droped-[cadvisor]",
+    "_type": "visualization",
+    "_source": {
+      "title": "RX Dropped [cadvisor]",
+      "visState": "{\n  \"type\": \"line\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"showCircles\": true,\n    \"smoothLines\": false,\n    \"interpolate\": \"linear\",\n    \"scale\": \"linear\",\n    \"drawLinesBetweenPoints\": true,\n    \"radiusRatio\": 9,\n    \"times\": [],\n    \"addTimeMarker\": false,\n    \"defaultYExtents\": false,\n    \"setYExtents\": false,\n    \"yAxis\": {}\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"avg\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"field\": \"container_stats.network.rx_dropped\"\n      }\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"date_histogram\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"container_stats.timestamp\",\n        \"interval\": \"auto\",\n        \"customInterval\": \"2h\",\n        \"min_doc_count\": 1,\n        \"extended_bounds\": {}\n      }\n    },\n    {\n      \"id\": \"3\",\n      \"type\": \"terms\",\n      \"schema\": \"group\",\n      \"params\": {\n        \"field\": \"container_Name.raw\",\n        \"size\": 10,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    },\n    {\n      \"id\": \"4\",\n      \"type\": \"terms\",\n      \"schema\": \"split\",\n      \"params\": {\n        \"field\": \"machine_name.raw\",\n        \"size\": 20,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\",\n        \"row\": true\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"cadvisor\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"*\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "RX-BYTES-[cadvisor]",
+    "_type": "visualization",
+    "_source": {
+      "title": "RX Bytes [cadvisor]",
+      "visState": "{\n  \"type\": \"line\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"showCircles\": true,\n    \"smoothLines\": false,\n    \"interpolate\": \"linear\",\n    \"scale\": \"linear\",\n    \"drawLinesBetweenPoints\": true,\n    \"radiusRatio\": 9,\n    \"times\": [],\n    \"addTimeMarker\": false,\n    \"defaultYExtents\": false,\n    \"setYExtents\": false,\n    \"yAxis\": {}\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"avg\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"field\": \"container_stats.network.rx_bytes\"\n      }\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"date_histogram\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"container_stats.timestamp\",\n        \"interval\": \"auto\",\n        \"customInterval\": \"2h\",\n        \"min_doc_count\": 1,\n        \"extended_bounds\": {}\n      }\n    },\n    {\n      \"id\": \"3\",\n      \"type\": \"terms\",\n      \"schema\": \"group\",\n      \"params\": {\n        \"field\": \"container_Name.raw\",\n        \"size\": 10,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    },\n    {\n      \"id\": \"4\",\n      \"type\": \"terms\",\n      \"schema\": \"split\",\n      \"params\": {\n        \"field\": \"machine_name.raw\",\n        \"size\": 20,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\",\n        \"row\": true\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"cadvisor\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"*\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "MEM-TOTAL-USAGE-[cadvisor]",
+    "_type": "visualization",
+    "_source": {
+      "title": "MEM Total Usage [cadvisor]",
+      "visState": "{\n  \"type\": \"line\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"showCircles\": true,\n    \"smoothLines\": false,\n    \"interpolate\": \"linear\",\n    \"scale\": \"linear\",\n    \"drawLinesBetweenPoints\": true,\n    \"radiusRatio\": 9,\n    \"times\": [],\n    \"addTimeMarker\": false,\n    \"defaultYExtents\": false,\n    \"setYExtents\": false,\n    \"yAxis\": {}\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"avg\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"field\": \"container_stats.memory.usage\"\n      }\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"date_histogram\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"container_stats.timestamp\",\n        \"interval\": \"auto\",\n        \"customInterval\": \"2h\",\n        \"min_doc_count\": 1,\n        \"extended_bounds\": {}\n      }\n    },\n    {\n      \"id\": \"3\",\n      \"type\": \"terms\",\n      \"schema\": \"group\",\n      \"params\": {\n        \"field\": \"container_Name.raw\",\n        \"size\": 10,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    },\n    {\n      \"id\": \"4\",\n      \"type\": \"terms\",\n      \"schema\": \"split\",\n      \"params\": {\n        \"field\": \"machine_name.raw\",\n        \"size\": 20,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\",\n        \"row\": true\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"cadvisor\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"*\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "MEM-Major-Page-Fault-[cadvisor]",
+    "_type": "visualization",
+    "_source": {
+      "title": "MEM Major Page Fault [cadvisor]",
+      "visState": "{\"type\":\"line\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"showCircles\":true,\"smoothLines\":false,\"interpolate\":\"linear\",\"scale\":\"linear\",\"drawLinesBetweenPoints\":true,\"radiusRatio\":9,\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"container_stats.memory.container_data.pgmajfault\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"container_stats.timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"container_Name.raw\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"4\",\"type\":\"terms\",\"schema\":\"split\",\"params\":{\"field\":\"machine_name.raw\",\"size\":20,\"order\":\"desc\",\"orderBy\":\"1\",\"row\":true}}],\"listeners\":{}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"cadvisor\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "MEM-HOT-[cadvisor]",
+    "_type": "visualization",
+    "_source": {
+      "title": "MEM Hot Only [cadvisor]",
+      "visState": "{\n  \"type\": \"line\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"showCircles\": true,\n    \"smoothLines\": false,\n    \"interpolate\": \"linear\",\n    \"scale\": \"linear\",\n    \"drawLinesBetweenPoints\": true,\n    \"radiusRatio\": 9,\n    \"times\": [],\n    \"addTimeMarker\": false,\n    \"defaultYExtents\": false,\n    \"setYExtents\": false,\n    \"yAxis\": {}\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"avg\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"field\": \"container_stats.memory.working_set\"\n      }\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"date_histogram\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"container_stats.timestamp\",\n        \"interval\": \"auto\",\n        \"customInterval\": \"2h\",\n        \"min_doc_count\": 1,\n        \"extended_bounds\": {}\n      }\n    },\n    {\n      \"id\": \"3\",\n      \"type\": \"terms\",\n      \"schema\": \"group\",\n      \"params\": {\n        \"field\": \"container_Name.raw\",\n        \"size\": 10,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    },\n    {\n      \"id\": \"4\",\n      \"type\": \"terms\",\n      \"schema\": \"split\",\n      \"params\": {\n        \"field\": \"machine_name.raw\",\n        \"size\": 20,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\",\n        \"row\": true\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"cadvisor\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"*\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "CPU-SYSTEM-[cadvisor]",
+    "_type": "visualization",
+    "_source": {
+      "title": "CPU System [cadvisor]",
+      "visState": "{\n  \"type\": \"line\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"showCircles\": true,\n    \"smoothLines\": false,\n    \"interpolate\": \"linear\",\n    \"scale\": \"linear\",\n    \"drawLinesBetweenPoints\": true,\n    \"radiusRatio\": 9,\n    \"times\": [],\n    \"addTimeMarker\": false,\n    \"defaultYExtents\": false,\n    \"setYExtents\": false,\n    \"yAxis\": {}\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"avg\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"field\": \"container_stats.cpu.usage.system\"\n      }\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"date_histogram\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"container_stats.timestamp\",\n        \"interval\": \"auto\",\n        \"customInterval\": \"2h\",\n        \"min_doc_count\": 1,\n        \"extended_bounds\": {}\n      }\n    },\n    {\n      \"id\": \"3\",\n      \"type\": \"terms\",\n      \"schema\": \"group\",\n      \"params\": {\n        \"field\": \"container_Name.raw\",\n        \"size\": 10,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    },\n    {\n      \"id\": \"4\",\n      \"type\": \"terms\",\n      \"schema\": \"split\",\n      \"params\": {\n        \"field\": \"machine_name.raw\",\n        \"size\": 20,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\",\n        \"row\": true\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"cadvisor\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"*\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "CPU-TOTAL-[cadvisor]",
+    "_type": "visualization",
+    "_source": {
+      "title": "CPU Total [cadvisor]",
+      "visState": "{\n  \"type\": \"line\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"showCircles\": true,\n    \"smoothLines\": false,\n    \"interpolate\": \"linear\",\n    \"scale\": \"linear\",\n    \"drawLinesBetweenPoints\": true,\n    \"radiusRatio\": 9,\n    \"times\": [],\n    \"addTimeMarker\": false,\n    \"defaultYExtents\": false,\n    \"setYExtents\": false,\n    \"yAxis\": {}\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"avg\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"field\": \"container_stats.cpu.usage.total\"\n      }\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"date_histogram\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"container_stats.timestamp\",\n        \"interval\": \"auto\",\n        \"customInterval\": \"2h\",\n        \"min_doc_count\": 1,\n        \"extended_bounds\": {}\n      }\n    },\n    {\n      \"id\": \"3\",\n      \"type\": \"terms\",\n      \"schema\": \"group\",\n      \"params\": {\n        \"field\": \"container_Name.raw\",\n        \"size\": 10,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    },\n    {\n      \"id\": \"4\",\n      \"type\": \"terms\",\n      \"schema\": \"split\",\n      \"params\": {\n        \"field\": \"machine_name.raw\",\n        \"size\": 20,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\",\n        \"row\": true\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"cadvisor\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"*\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "CPU-USER-[cadvisor]",
+    "_type": "visualization",
+    "_source": {
+      "title": "CPU User  [cadvisor]",
+      "visState": "{\n  \"type\": \"line\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"showCircles\": true,\n    \"smoothLines\": false,\n    \"interpolate\": \"linear\",\n    \"scale\": \"linear\",\n    \"drawLinesBetweenPoints\": true,\n    \"radiusRatio\": 9,\n    \"times\": [],\n    \"addTimeMarker\": false,\n    \"defaultYExtents\": false,\n    \"setYExtents\": false,\n    \"yAxis\": {}\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"avg\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"field\": \"container_stats.cpu.usage.user\"\n      }\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"date_histogram\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"container_stats.timestamp\",\n        \"interval\": \"auto\",\n        \"customInterval\": \"2h\",\n        \"min_doc_count\": 1,\n        \"extended_bounds\": {}\n      }\n    },\n    {\n      \"id\": \"3\",\n      \"type\": \"terms\",\n      \"schema\": \"group\",\n      \"params\": {\n        \"field\": \"container_Name.raw\",\n        \"size\": 10,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    },\n    {\n      \"id\": \"4\",\n      \"type\": \"terms\",\n      \"schema\": \"split\",\n      \"params\": {\n        \"field\": \"machine_name.raw\",\n        \"size\": 20,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\",\n        \"row\": true\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"cadvisor\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"*\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "MEM-Page-Fault-[cadvisor]",
+    "_type": "visualization",
+    "_source": {
+      "title": "MEM Page Fault [cadvisor]",
+      "visState": "{\"type\":\"line\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"showCircles\":true,\"smoothLines\":false,\"interpolate\":\"linear\",\"scale\":\"linear\",\"drawLinesBetweenPoints\":true,\"radiusRatio\":9,\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"container_stats.memory.container_data.pgfault\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"container_stats.timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"container_Name.raw\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"4\",\"type\":\"terms\",\"schema\":\"split\",\"params\":{\"field\":\"machine_name.raw\",\"size\":20,\"order\":\"desc\",\"orderBy\":\"1\",\"row\":true}}],\"listeners\":{}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"cadvisor\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "~~~~>-SELECT-machine_Name-(cadvisor-on-host)-TO-FILTER-<~~~~-[cadvisor]",
+    "_type": "visualization",
+    "_source": {
+      "title": "~~~~> SELECT machine_name (cadvisor on host) TO FILTER <~~~~ [cadvisor]",
+      "visState": "{\n  \"type\": \"table\",\n  \"params\": {\n    \"perPage\": 10,\n    \"showPartialRows\": false,\n    \"showMeticsAtAllLevels\": false\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"terms\",\n      \"schema\": \"bucket\",\n      \"params\": {\n        \"field\": \"machine_name.raw\",\n        \"size\": 10,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"cadvisor\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"*\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "~~~~>-SELECT-Container_Name-TO-FILTER-<~~~~-[cadvisor]",
+    "_type": "visualization",
+    "_source": {
+      "title": "~~~~> SELECT Container_Name (container or root) TO FILTER <~~~~ [cadvisor]",
+      "visState": "{\n  \"type\": \"table\",\n  \"params\": {\n    \"perPage\": 10,\n    \"showPartialRows\": false,\n    \"showMeticsAtAllLevels\": false\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"terms\",\n      \"schema\": \"bucket\",\n      \"params\": {\n        \"field\": \"container_Name.raw\",\n        \"size\": 10,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"cadvisor\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"*\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  }
+]
