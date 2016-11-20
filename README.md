@@ -1,4 +1,4 @@
-## RUN LOGGING INFRA FOR SECURITY AND PERF : ELK STACK
+## DEPLOY A LOGGING INFRA : ELK STACK
 
 # WORK IN PROGRESS!!
 
@@ -16,7 +16,7 @@ Prerequisite:
 
 
 ## 1. Get all files from github
-    git clone https://github.com/gregbkr/docker-elk-cadvisor-dashboards elk && cd elk
+    git clone https://github.com/gregbkr/elk-dashboard-docker elk && cd elk
 
 ## 2. Run all containers:
 
@@ -28,6 +28,8 @@ http://localhost:5601 (direct without proxy)
 https://localhost:5600 (!HTTPS ONLY! enter the credentials admin/Kibana05) 
 
 Initialize the index: pressing the green "create" button when log starting to come
+
+...
 
 ## 7. Import all dashboards and Searches: 
     Setting > Object > Import > /kibana-conf/export_vX.json
