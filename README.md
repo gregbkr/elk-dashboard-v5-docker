@@ -1,11 +1,9 @@
-## DEPLOY A LOGGING INFRA : ELK STACK
-
-# WORK IN PROGRESS!!
+## DEPLOY A LOGGING INFRA : ELK STACK v2
 
 This setup will run elk
-* elasticsearch database
-* Logstash : receiving and parsing logs
-* Kibana : Web interface
+* elasticsearch v2 database
+* Logstash v2: receiving and parsing logs
+* Kibana v4: Web interface
 * Ngnix Proxy : for SSL + password access
 * Docker is the main source of logs, but we could send anything to syslog 5000/udp
 * Filebeat collect files.log and send them to syslog 5001/udp
@@ -22,16 +20,21 @@ Prerequisite:
 
     docker-compose up -d
 
+and send few logs with nc or socat:
+
+    nc -w0 -u localhost 5000 <<< "TEST+"
+    echo "`date +\%Y-\%m-\%dT\%H:\%M:\%S` vm:`hostname` service:bity.com.health msg:TEST2" | socat -t 0 - UDP:localhost:5000
+
 ## 3. Log on kibana to see the result
 
 http://localhost:5601 (direct without proxy)
+
 https://localhost:5600 (!HTTPS ONLY! enter the credentials admin/Kibana05) 
 
 Initialize the index: pressing the green "create" button when log starting to come
 
-...
 
-## 7. Import all dashboards and Searches: 
+## 4. Import all dashboards and Searches: 
     Setting > Object > Import > /kibana-conf/export_vX.json
 
 If some dashboards do not display well, need to wait 2 min for the data to come in, then refresh the fields in order to force ELK to initialize  them now:
@@ -41,7 +44,7 @@ If some dashboards do not display well, need to wait 2 min for the data to come 
 #
 #---------------------- Config  -------------------------------
 
-## 10. Logstash
+## 5. Logstash
 
 ### Validate your config 
 
@@ -62,7 +65,7 @@ You can use https://grokdebug.herokuapp.com/ in order to check a log parsing.
 #
 #------ Backup and Restore and optimize ------
 
-## 12. Index management (backup, restore, rotate)
+## Index management (backup, restore, rotate)
 
 Configure backup storage  : (done in initialization step - in our case, backups will go in the $PWD/backup local folder)
 
@@ -78,8 +81,8 @@ More info in file: index-mgmt.md
 
 #
 #---------------------- Stop and refresh -------------------
-## 13. To stop compose
+## To stop compose
     docker-compose stop
 
-## 14. To refresh logstash after a modification in the logstash.conf file:
+## To refresh logstash after a modification in the logstash.conf file:
     docker restart elk_logstash_1

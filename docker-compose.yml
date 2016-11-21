@@ -5,7 +5,7 @@ services:
 # filebeat: colllect flat log files: docker run -d --name filebeat -v $PWD/filebeat/filebeat.yml:/filebeat.yml:ro -v /var/log/auth.log:/mnt/var/log/auth.log:ro sbex/filebeat
 
   elasticsearch:
-    image: elasticsearch
+    image: elasticsearch:2
     volumes:
      - elasticsearch:/usr/share/elasticsearch/data
      - backup:/mount/backup
@@ -16,15 +16,15 @@ services:
     #environment:
     #  ES_HEAP_SIZE: 2g
     restart: always
-    logging:
-      driver: syslog
-      options:
-        syslog-address: "udp://localhost:5000"
-        syslog-format: rfc3164
-        tag: elasticsearch
+    #logging:
+    #  driver: syslog
+    #  options:
+    #    syslog-address: "udp://localhost:5000"
+    #    syslog-format: rfc3164
+    #    tag: elasticsearch
 
   kibana:
-    image: kibana
+    image: kibana:4
     links:
       - elasticsearch
     ports:
@@ -36,15 +36,15 @@ services:
     restart: always
     depends_on:
       - elasticsearch
-    logging:
-      driver: syslog
-      options:
-        syslog-address: "udp://localhost:5000"
-        syslog-format: rfc3164
-        tag: kibana
+    #logging:
+    #  driver: syslog
+    #  options:
+    #    syslog-address: "udp://localhost:5000"
+    #    syslog-format: rfc3164
+    #    tag: kibana
 
   logstash:
-    image: logstash
+    image: logstash:2
     ports:
       #- "5000:5000"
       - "5000:5000/udp"
@@ -58,12 +58,12 @@ services:
     restart: always
     depends_on:
       - elasticsearch
-    logging:
-      driver: syslog
-      options:
-        syslog-address: "udp://127.0.0.1:5000"
-        syslog-format: rfc3164
-        tag: logstash
+    #logging:
+    #  driver: syslog
+    #  options:
+    #    syslog-address: "udp://127.0.0.1:5000"
+    #    syslog-format: rfc3164
+    #    tag: logstash
 
   proxyelk:
     image: nginx
