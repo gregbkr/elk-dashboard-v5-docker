@@ -2,19 +2,20 @@ version: '2'
 
 services:
 
-# filebeat: colllect flat log files: docker run -d --name filebeat -v $PWD/filebeat/filebeat.yml:/filebeat.yml:ro -v /var/log/auth.log:/mnt/var/log/auth.log:ro sbex/filebeat
+# filebeat: collect flat log files: docker run -d --name filebeat -v $PWD/filebeat/filebeat.yml:/filebeat.yml:ro -v /var/log/auth.log:/mnt/var/log/auth.log:ro sbex/filebeat
 
   elasticsearch:
-    image: elasticsearch:2
+    image: elasticsearch:5
     volumes:
      - elasticsearch:/usr/share/elasticsearch/data
      - backup:/mount/backup
-     - $PWD/es/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
+     #- $PWD/es/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
     ports:
       - "9200:9200"
-      #- "9300:9300"
-    #environment:
+      - "9300:9300"
+    environment:
     #  ES_HEAP_SIZE: 2g
+      ES_JAVA_OPTS: "-Xms1g -Xmx1g"
     restart: always
     #logging:
     #  driver: syslog
@@ -22,9 +23,11 @@ services:
     #    syslog-address: "udp://localhost:5000"
     #    syslog-format: rfc3164
     #    tag: elasticsearch
+    networks:
+      - docker_elk
 
   kibana:
-    image: kibana:4
+    image: kibana
     links:
       - elasticsearch
     ports:
@@ -42,9 +45,11 @@ services:
     #    syslog-address: "udp://localhost:5000"
     #    syslog-format: rfc3164
     #    tag: kibana
+    networks:
+      - docker_elk
 
   logstash:
-    image: logstash:2
+    image: logstash:2   # v5 is very slow and unusable...
     ports:
       #- "5000:5000"
       - "5000:5000/udp"
@@ -64,6 +69,8 @@ services:
     #    syslog-address: "udp://127.0.0.1:5000"
     #    syslog-format: rfc3164
     #    tag: logstash
+    networks:
+      - docker_elk
 
   proxyelk:
     image: nginx
@@ -76,7 +83,13 @@ services:
     depends_on:
       - kibana
     restart: always
+    networks:
+      - docker_elk
 
 volumes:
   elasticsearch:
   backup:
+
+networks:
+  docker_elk:
+    driver: bridge

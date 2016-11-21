@@ -1,0 +1,12 @@
+input {
+  stdin { }
+  #file { 
+  #  path => "/opt/logstash/conf.d/input-exemple.log" 
+  #  type => "syslog.elasticsearch"
+  #  start_position => "beginning"
+  #}
+}
+
+output {
+  stdout { codec => rubydebug }
+}
