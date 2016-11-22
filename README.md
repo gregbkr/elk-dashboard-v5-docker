@@ -1,4 +1,4 @@
-## DEPLOY A LOGGING INFRA : ELK STACK v2
+## DEPLOY A LOGGING INFRA : ELK STACK v5
 
 This setup will run elk
 * elasticsearch v2 database
@@ -18,6 +18,7 @@ Prerequisite:
 
 ## 2. Run all containers:
 
+    sudo sysctl -w vm.max_map_count=262144  <-- to fix an issue with es
     docker-compose up -d
 
 and send few logs with nc or socat:
