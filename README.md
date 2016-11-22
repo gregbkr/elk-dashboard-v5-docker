@@ -8,7 +8,7 @@ This setup will run elk
 * Kibana v5: Web interface
 * Ngnix Proxy : for SSL + password access
 * Docker container is the main source of logs, but we could send anything to syslog 5000/udp
-* Filebeat collect files.log and send them to syslog 5001/udp
+* Filebeat collect files.log and send them to syslog 5001/tcp
 
 Prerequisite:
  - Linux like OS
