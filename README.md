@@ -1,5 +1,7 @@
 ## DEPLOY A LOGGING INFRA : ELK STACK v5
 
+![ELKv5.png](https://github.com/gregbkr/elk-dashboard-v5-docker/raw/master/ELKv5.png)
+
 This setup will run elk
 * elasticsearch v5 database
 * Logstash v2: receiving and parsing logs <-- tried v5 but it is so slow! unusable...
@@ -26,9 +28,11 @@ make it persistent:
     nano /etc/sysctl.conf
     vm.max_map_count=262144
 
-## 2. Run all containers:
+## 2. Run all containers for version 5:
     
     docker-compose up -d
+
+(For version the old version 2, use: docker-compose -f docker-compose-v2.yml up -d)
 
 and send few logs with nc or socat:
 
