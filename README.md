@@ -1,11 +1,11 @@
 ## DEPLOY A LOGGING INFRA : ELK STACK v5
 
 This setup will run elk
-* elasticsearch v2 database
-* Logstash v2: receiving and parsing logs
-* Kibana v4: Web interface
+* elasticsearch v5 database
+* Logstash v2: receiving and parsing logs <-- tried v5 but it is so slow! unusable...
+* Kibana v5: Web interface
 * Ngnix Proxy : for SSL + password access
-* Docker is the main source of logs, but we could send anything to syslog 5000/udp
+* Docker container is the main source of logs, but we could send anything to syslog 5000/udp
 * Filebeat collect files.log and send them to syslog 5001/udp
 
 Prerequisite:
@@ -16,15 +16,24 @@ Prerequisite:
 ## 1. Get all files from github
     git clone https://github.com/gregbkr/elk-dashboard-docker elk && cd elk
 
-## 2. Run all containers:
-
+## 2. Fix
+Fix an issue with hungry es v5
+    
     sudo sysctl -w vm.max_map_count=262144  <-- to fix an issue with es
+
+make it persistent: 
+
+    nano /etc/sysctl.conf
+    vm.max_map_count=262144
+
+## 2. Run all containers:
+    
     docker-compose up -d
 
 and send few logs with nc or socat:
 
-    nc -w0 -u localhost 5000 <<< "TEST+"
-    echo "`date +\%Y-\%m-\%dT\%H:\%M:\%S` vm:`hostname` service:bity.com.health msg:TEST2" | socat -t 0 - UDP:localhost:5000
+    nc -w0 -u localhost 5000 <<< "TEST1"
+    echo "`date +\%Y-\%m-\%dT\%H:\%M:\%S` vm:`hostname` service:.com.health msg:TEST2" | socat -t 0 - UDP:localhost:5000
 
 ## 3. Log on kibana to see the result
 
@@ -32,7 +41,7 @@ http://localhost:5601 (direct without proxy)
 
 https://localhost:5600 (!HTTPS ONLY! enter the credentials admin/Kibana05) 
 
-Initialize the index: pressing the green "create" button when log starting to come
+Initialize the index: pressing the green "create" button when log starting to come.
 
 
 ## 4. Import all dashboards and Searches: 
@@ -51,7 +60,7 @@ If some dashboards do not display well, need to wait 2 min for the data to come 
 
 You can run logstash to easily collect input string. Each input you paste in the invite will be process and output on screen by logstash. To setup, please run this container: 
   
-    docker run -it --rm --name logstash -p 5001:5000 -p 5001:5000/udp -v $PWD/logstash-conf:/opt/logstash/conf.d logstash:1.5.3  -f /opt/logstash/conf.d/logstash-test.conf
+    docker run -it --rm --name logstash -p 5001:5000 -p 5001:5000/udp -v $PWD/logstash-conf:/opt/logstash/conf.d logstash:2  -f /opt/logstash/conf.d/logstash-test.conf
   
 And paste log messages like this and check if the output is correct. Make modification to logstash-test.conf and restart logstash container to refresh.
 
@@ -66,19 +75,30 @@ You can use https://grokdebug.herokuapp.com/ in order to check a log parsing.
 #
 #------ Backup and Restore and optimize ------
 
+## Easy backup and restore via elasticdump
+
+Backup index data to a file :
+
+    docker run --rm -ti -v /root/backup:/data sherzberg/elasticdump --all=true --input=http://ip:9200/ --output=/data/elkexport.json
+ 
+restore
+
+    docker run --rm -ti -v /root/backup:/data sherzberg/elasticdump --bulk=true --input=/data/elkexport.json --output=http://ip:9200/
+
 ## Index management (backup, restore, rotate)
 
-Configure backup storage  : (done in initialization step - in our case, backups will go in the $PWD/backup local folder)
+More info in file: nano INDEX-MGMT.md
 
-    es-conf/backup-init.sh
+#------ Issues ------
 
-Edit as you wish (correct with you --host IP) and set cron job for backup, restore, index rotation:
+## Logstash v5
 
-    crontab -l | cat es-conf/backup.crontab | crontab -
+Try to use image: logstash:5
+And run a 
 
-You can now monitor the backup via CURATOR dashboard
+    docker logs -f elk_logstash_1
 
-More info in file: index-mgmt.md
+You will see that logstashv5 start very slowly (5min sometimes)...
 
 #
 #---------------------- Stop and refresh -------------------
