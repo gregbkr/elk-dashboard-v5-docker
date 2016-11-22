@@ -21,7 +21,7 @@ Prerequisite:
 ## 2. Fix
 Fix an issue with hungry es v5
     
-    sudo sysctl -w vm.max_map_count=262144  <-- to fix an issue with es
+    sudo sysctl -w vm.max_map_count=262144
 
 make it persistent: 
 
@@ -32,7 +32,7 @@ make it persistent:
     
     docker-compose up -d
 
-(For version the old version 2, use: docker-compose -f docker-compose-v2.yml up -d)
+(For the old version 2, use: docker-compose -f docker-compose-v2.yml up -d)
 
 and send few logs with nc or socat:
 
