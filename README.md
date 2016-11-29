@@ -48,7 +48,7 @@ https://localhost:5600 (!HTTPS ONLY! enter the credentials admin/Kibana05)
 Initialize the index: pressing the green "create" button when log starting to come.
 
 
-## 4. Import all dashboards and Searches: 
+## 4. Import dashboards and Searches: 
     Setting > Object > Import > /kibana-conf/export_vX.json
 
 If some dashboards do not display well, need to wait 2 min for the data to come in, then refresh the fields in order to force ELK to initialize  them now:
