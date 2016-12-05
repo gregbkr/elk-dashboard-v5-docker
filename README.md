@@ -47,14 +47,6 @@ https://localhost:5600 (!HTTPS ONLY! enter the credentials admin/Kibana05)
 
 Initialize the index: pressing the green "create" button when log starting to come.
 
-
-## 4. Import dashboards and Searches: 
-    Setting > Object > Import > /kibana-conf/export_vX.json
-
-If some dashboards do not display well, need to wait 2 min for the data to come in, then refresh the fields in order to force ELK to initialize  them now:
-
-    Setting > Indices > [logstash-]YYYY.MM.DD > Reload field list (the circle arrow in orange)
-
 #
 #---------------------- Config  -------------------------------
 
@@ -75,6 +67,10 @@ If you got the field tags = ParseFailure, means your parsing is wrong somewhere.
 ### Modify log parsing
 
 You can use https://grokdebug.herokuapp.com/ in order to check a log parsing. 
+
+### To refresh logstash after a modification in the logstash.conf file:
+    docker restart elk_logstash_1
+
 
 #
 #------ Backup and Restore and optimize ------
@@ -104,10 +100,5 @@ And run a
 
 You will see that logstashv5 start very slowly (5min sometimes)...
 
-#
-#---------------------- Stop and refresh -------------------
-## To stop compose
-    docker-compose stop
 
-## To refresh logstash after a modification in the logstash.conf file:
-    docker restart elk_logstash_1
+
