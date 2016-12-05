@@ -71,6 +71,14 @@ You can use https://grokdebug.herokuapp.com/ in order to check a log parsing.
 ### To refresh logstash after a modification in the logstash.conf file:
     docker restart elk_logstash_1
 
+### Sending logs via docker driver
+
+When your tests seems fine and you want containers to automatically send their log output:
+
+    nano docker-compose-yml    <-- uncomment the logging sections
+    docker-compose restart
+    
+You should see in kibana that elk is collecting your containers logs.
 
 #
 #------ Backup and Restore and optimize ------
