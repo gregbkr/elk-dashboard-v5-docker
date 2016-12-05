@@ -14,6 +14,7 @@ Prerequisite:
  - Linux like OS
  - Docker, docker-compose
 
+More info: you can find an overview of that setup on my blog: https://greg.satoshi.tech/
 
 ## 1. Get all files from github
     git clone https://github.com/gregbkr/elk-dashboard-docker elk && cd elk
