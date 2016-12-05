@@ -1,6 +1,6 @@
 ## DEPLOY A LOGGING INFRA : ELK STACK v5
 
-![elkv5.png](https://github.com/gregbkr/elk-dashboard-v5-docker/raw/master/elkv5.png)
+![elkv5.png](https://github.com/gregbkr/elk-dashboard-v5-docker/raw/master/elkv5.PNG)
 
 This setup will run elk
 * elasticsearch v5 database
