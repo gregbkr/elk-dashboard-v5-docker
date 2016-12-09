@@ -27,7 +27,7 @@ services:
       - docker_elk
 
   kibana:
-    image: kibana
+    image: kibana:5
     links:
       - elasticsearch
     ports:
